@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion';
 import { useNavigate, useLocation } from 'react-router-dom';
-import Logo from './Logo';
+import LogoWithText from './LogoWithText';
 
 const Header = () => {
   const navigate = useNavigate();
@@ -42,10 +42,8 @@ const Header = () => {
         <div className="flex justify-between items-center py-4">
           <button
             onClick={() => handleNavigation('/')}
-            className="flex items-center space-x-3"
           >
-            <Logo />
-            <span className="text-2xl font-bold text-white">BEACON</span>
+            <LogoWithText />
           </button>
           
           <nav className="hidden md:flex space-x-8">

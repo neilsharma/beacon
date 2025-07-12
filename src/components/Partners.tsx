@@ -24,7 +24,7 @@ const Partners = () => {
   const totalWidth = partners.length * (itemWidth + gapWidth); // Actual rendered width per set
 
   return (
-    <section id="results" className="py-20 bg-gray-100">
+    <section id="results" className="py-20 bg-gray-200">
       <div>
         <div className="text-center mb-16">
           <div className="mx-auto px-4 sm:px-6 lg:px-8">

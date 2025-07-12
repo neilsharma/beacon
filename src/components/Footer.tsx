@@ -1,18 +1,13 @@
-import Logo from './Logo';
+import LogoWithText from './LogoWithText';
 
 const Footer = () => {
   return (
-    <footer className="bg-black text-white py-16 border-t border-gray-800">
+    <footer className="bg-black text-white pt-36 pb-16">
       <div className="max-w-7xl xl:max-w-screen-2xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex flex-col md:flex-row items-start justify-between gap-8">
           {/* Logo Section */}
           <div className="flex-[1] flex items-center justify-center md:justify-start">
-            <div className="flex items-center space-x-3">
-              <div className="scale-125">
-                <Logo />
-              </div>
-              <span className="text-2xl font-bold text-white">BEACON</span>
-            </div>
+            <LogoWithText logoScale="scale-125" />
           </div>
           
           {/* Navigation Sections */}

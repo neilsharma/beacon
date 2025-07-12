@@ -1,28 +1,40 @@
 import { Send } from 'lucide-react';
 import { useForm, ValidationError } from '@formspree/react';
+import { SectionBorder } from './ui/section-border';
+import { SectionGlow } from './ui/section-glow';
+import { Particles } from './magicui/particles';
 
 const Contact = () => {
   const [state, handleSubmit] = useForm("xjkrnjnr");
 
   if (state.succeeded) {
     return (
-      <section id="contact" className="py-20 bg-gray-50 relative">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section id="contact" className="py-20 bg-black relative overflow-hidden">
+        <SectionBorder />
+        <SectionGlow opacity="8%" position="top-[-300px]" />
+        <Particles
+          className="absolute inset-0"
+          quantity={60}
+          ease={80}
+          color="#ffffff"
+          refresh
+        />
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
+            <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
               Thank You!
             </h2>
-            <p className="text-xl text-gray-700 max-w-3xl mx-auto">
+            <p className="text-xl text-gray-300 max-w-3xl mx-auto">
               Your message has been sent successfully. We'll get back to you within 24 hours to discuss how AI can transform your agency.
             </p>
           </div>
           <div className="flex justify-center">
-            <div className="bg-white border border-gray-300 p-8 rounded-xl max-w-lg w-full shadow-lg text-center">
+            <div className="bg-gradient-to-b from-modernization-gradient-start to-black backdrop-blur-sm border border-card-border p-8 rounded-xl max-w-lg w-full shadow-lg text-center">
               <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
                 <Send className="h-8 w-8 text-green-600" />
               </div>
-              <h3 className="text-2xl font-bold text-gray-900 mb-4">Message Sent!</h3>
-              <p className="text-gray-600 mb-6">
+              <h3 className="text-2xl font-bold text-white mb-4">Message Sent!</h3>
+              <p className="text-gray-300 mb-6">
                 Our team will review your project details and reach out to schedule a consultation.
               </p>
               <button
@@ -39,25 +51,34 @@ const Contact = () => {
   }
 
   return (
-    <section id="contact" className="py-20 bg-gray-50 relative">
-      <div className="max-w-7xl xl:max-w-screen-2xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section id="contact" className="py-20 bg-black relative overflow-hidden">
+      <SectionBorder />
+      <SectionGlow opacity="8%" position="top-[-300px]" />
+      <Particles
+        className="absolute inset-0"
+        quantity={60}
+        ease={80}
+        color="#ffffff"
+        refresh
+      />
+      <div className="max-w-7xl xl:max-w-screen-2xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
+          <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
             Connect with us
           </h2>
-          <p className="text-xl text-gray-700 max-w-3xl mx-auto">
+          <p className="text-xl text-gray-300 max-w-3xl mx-auto">
             Let's discuss how AI can enhance your government operations. Our team is ready to help you navigate the future of public service.
           </p>
         </div>
 
         <div className="flex justify-center">
           {/* Contact Form */}
-          <div className="bg-white border border-gray-300 p-8 rounded-xl max-w-lg w-full shadow-lg">
-            <h3 className="text-2xl font-bold text-gray-900 mb-6">Get Started Today</h3>
+          <div className="bg-gradient-to-b from-modernization-gradient-start to-black backdrop-blur-sm border border-card-border p-8 rounded-xl max-w-lg w-full shadow-lg">
+            <h3 className="text-2xl font-bold text-white mb-6">Get Started Today</h3>
             
             <form onSubmit={handleSubmit} className="space-y-6">
               <div>
-                <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-2">
+                <label htmlFor="name" className="block text-sm font-medium text-gray-300 mb-2">
                   Full Name
                 </label>
                 <input
@@ -65,7 +86,7 @@ const Contact = () => {
                   id="name"
                   name="name"
                   required
-                  className="w-full px-4 py-3 bg-gray-100 border border-gray-300 text-gray-900 rounded-lg focus:bg-white focus:border-yellow-500 focus:ring-2 focus:ring-yellow-500/20 transition-all"
+                  className="w-full px-4 py-3 bg-white/10 border border-white/20 text-white rounded-lg focus:bg-white/15 focus:border-yellow-500 focus:ring-2 focus:ring-yellow-500/20 transition-all placeholder-gray-400"
                   placeholder="Your full name"
                 />
                 <ValidationError 
@@ -77,7 +98,7 @@ const Contact = () => {
               </div>
 
               <div>
-                <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-2">
+                <label htmlFor="email" className="block text-sm font-medium text-gray-300 mb-2">
                   Email Address
                 </label>
                 <input
@@ -85,7 +106,7 @@ const Contact = () => {
                   id="email"
                   name="email"
                   required
-                  className="w-full px-4 py-3 bg-gray-100 border border-gray-300 text-gray-900 rounded-lg focus:bg-white focus:border-yellow-500 focus:ring-2 focus:ring-yellow-500/20 transition-all"
+                  className="w-full px-4 py-3 bg-white/10 border border-white/20 text-white rounded-lg focus:bg-white/15 focus:border-yellow-500 focus:ring-2 focus:ring-yellow-500/20 transition-all placeholder-gray-400"
                   placeholder="your.email@agency.gov"
                 />
                 <ValidationError 
@@ -97,7 +118,7 @@ const Contact = () => {
               </div>
 
               <div>
-                <label htmlFor="agencyCompany" className="block text-sm font-medium text-gray-700 mb-2">
+                <label htmlFor="agencyCompany" className="block text-sm font-medium text-gray-300 mb-2">
                   Agency/Company
                 </label>
                 <input
@@ -105,7 +126,7 @@ const Contact = () => {
                   id="agencyCompany"
                   name="agencyCompany"
                   required
-                  className="w-full px-4 py-3 bg-gray-100 border border-gray-300 text-gray-900 rounded-lg focus:bg-white focus:border-yellow-500 focus:ring-2 focus:ring-yellow-500/20 transition-all"
+                  className="w-full px-4 py-3 bg-white/10 border border-white/20 text-white rounded-lg focus:bg-white/15 focus:border-yellow-500 focus:ring-2 focus:ring-yellow-500/20 transition-all placeholder-gray-400"
                   placeholder="Your agency or company"
                 />
                 <ValidationError 
@@ -117,7 +138,7 @@ const Contact = () => {
               </div>
 
               <div>
-                <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-2">
+                <label htmlFor="message" className="block text-sm font-medium text-gray-300 mb-2">
                   Project Details
                 </label>
                 <textarea
@@ -125,7 +146,7 @@ const Contact = () => {
                   name="message"
                   required
                   rows={4}
-                  className="w-full px-4 py-3 bg-gray-100 border border-gray-300 text-gray-900 rounded-lg focus:bg-white focus:border-yellow-500 focus:ring-2 focus:ring-yellow-500/20 transition-all"
+                  className="w-full px-4 py-3 bg-white/10 border border-white/20 text-white rounded-lg focus:bg-white/15 focus:border-yellow-500 focus:ring-2 focus:ring-yellow-500/20 transition-all placeholder-gray-400"
                   placeholder="Tell us about your AI project needs..."
                 />
                 <ValidationError 

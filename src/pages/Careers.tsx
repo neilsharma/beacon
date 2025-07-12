@@ -208,16 +208,25 @@ const Careers = () => {
             </h2>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-6xl mx-auto justify-items-center">
             {whyWorkWithUs.map((item, index) => (
               <motion.div
                 key={index}
+                className="flex items-start space-x-4"
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: index * 0.1 }}
                 viewport={{ once: true }}
               >
-                <BenefitCard {...item} />
+                <div className="flex-shrink-0">
+                  <div className="inline-flex items-center justify-center w-10 h-10 bg-white/10 rounded-full">
+                    <item.icon className="h-5 w-5 text-white" strokeWidth={1.5} />
+                  </div>
+                </div>
+                <div className="flex-1">
+                  <div className="text-white font-bold mb-1 text-lg">{item.title}</div>
+                  <div className="text-gray-300 text-base leading-relaxed max-w-md">{item.description}</div>
+                </div>
               </motion.div>
             ))}
           </div>
@@ -296,27 +305,29 @@ const Careers = () => {
       </section>
 
       {/* Contact Form */}
-      <section className="py-20 bg-gray-50 relative">
-        <div className="max-w-7xl xl:max-w-screen-2xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="py-20 bg-black relative overflow-hidden">
+        <SectionBorder />
+        <SectionGlow opacity="8%" position="top-[-300px]" />
+        <div className="max-w-7xl xl:max-w-screen-2xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
+            <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
               Get In Touch
             </h2>
-            <p className="text-xl text-gray-700 max-w-3xl mx-auto">
+            <p className="text-xl text-gray-300 max-w-3xl mx-auto">
               Ready to make an impact? We'd love to hear from you.
             </p>
           </div>
 
           <div className="max-w-2xl mx-auto">
-            <div className="bg-white border border-gray-300 p-8 rounded-xl shadow-lg">
+            <div className="bg-gradient-to-b from-modernization-gradient-start to-black backdrop-blur-sm border border-card-border p-8 rounded-xl shadow-lg">
               <form onSubmit={handleSubmit} className="space-y-6">
                 {/* Contact Information */}
                 <div className="space-y-4">
-                  <h3 className="text-lg font-bold text-gray-900 border-b border-gray-200 pb-2">Contact Information</h3>
+                  <h3 className="text-lg font-bold text-white border-b border-white/20 pb-2">Contact Information</h3>
                   
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                     <div>
-                      <label htmlFor="fullName" className="block text-sm font-medium text-gray-700 mb-2">
+                      <label htmlFor="fullName" className="block text-sm font-medium text-gray-300 mb-2">
                         Full Name *
                       </label>
                       <input
@@ -324,13 +335,13 @@ const Careers = () => {
                         id="fullName"
                         name="fullName"
                         required
-                        className="w-full px-4 py-3 bg-gray-100 border border-gray-300 text-gray-900 rounded-lg focus:bg-white focus:border-yellow-500 focus:ring-2 focus:ring-yellow-500/20 transition-all"
+                        className="w-full px-4 py-3 bg-white/10 border border-white/20 text-white rounded-lg focus:bg-white/15 focus:border-yellow-500 focus:ring-2 focus:ring-yellow-500/20 transition-all placeholder-gray-400 placeholder-gray-400"
                         placeholder="Your full name"
                       />
                     </div>
                     
                     <div>
-                      <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-2">
+                      <label htmlFor="email" className="block text-sm font-medium text-gray-300 mb-2">
                         Email Address *
                       </label>
                       <input
@@ -338,88 +349,48 @@ const Careers = () => {
                         id="email"
                         name="email"
                         required
-                        className="w-full px-4 py-3 bg-gray-100 border border-gray-300 text-gray-900 rounded-lg focus:bg-white focus:border-yellow-500 focus:ring-2 focus:ring-yellow-500/20 transition-all"
+                        className="w-full px-4 py-3 bg-white/10 border border-white/20 text-white rounded-lg focus:bg-white/15 focus:border-yellow-500 focus:ring-2 focus:ring-yellow-500/20 transition-all placeholder-gray-400 placeholder-gray-400"
                         placeholder="your.email@example.com"
                       />
                     </div>
                   </div>
 
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                    <div>
-                      <label htmlFor="phone" className="block text-sm font-medium text-gray-700 mb-2">
-                        Phone Number
-                      </label>
-                      <input
-                        type="tel"
-                        id="phone"
-                        name="phone"
-                        className="w-full px-4 py-3 bg-gray-100 border border-gray-300 text-gray-900 rounded-lg focus:bg-white focus:border-yellow-500 focus:ring-2 focus:ring-yellow-500/20 transition-all"
-                        placeholder="(555) 123-4567"
-                      />
-                    </div>
-                    
-                    <div>
-                      <label htmlFor="location" className="block text-sm font-medium text-gray-700 mb-2">
-                        Location (City, State)
-                      </label>
-                      <input
-                        type="text"
-                        id="location"
-                        name="location"
-                        className="w-full px-4 py-3 bg-gray-100 border border-gray-300 text-gray-900 rounded-lg focus:bg-white focus:border-yellow-500 focus:ring-2 focus:ring-yellow-500/20 transition-all"
-                        placeholder="Washington, DC"
-                      />
-                    </div>
-                  </div>
                 </div>
 
                 {/* Professional Background */}
                 <div className="space-y-4">
-                  <h3 className="text-lg font-bold text-gray-900 border-b border-gray-200 pb-2">Professional Background</h3>
+                  <h3 className="text-lg font-bold text-white border-b border-white/20 pb-2">Professional Background</h3>
                   
-                  <div>
-                    <label htmlFor="currentRole" className="block text-sm font-medium text-gray-700 mb-2">
-                      Current Role/Title
-                    </label>
-                    <input
-                      type="text"
-                      id="currentRole"
-                      name="currentRole"
-                      className="w-full px-4 py-3 bg-gray-100 border border-gray-300 text-gray-900 rounded-lg focus:bg-white focus:border-yellow-500 focus:ring-2 focus:ring-yellow-500/20 transition-all"
-                      placeholder="Senior Software Engineer"
-                    />
-                  </div>
-
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                     <div>
-                      <label htmlFor="linkedin" className="block text-sm font-medium text-gray-700 mb-2">
+                      <label htmlFor="linkedin" className="block text-sm font-medium text-gray-300 mb-2">
                         LinkedIn Profile URL
                       </label>
                       <input
                         type="url"
                         id="linkedin"
                         name="linkedin"
-                        className="w-full px-4 py-3 bg-gray-100 border border-gray-300 text-gray-900 rounded-lg focus:bg-white focus:border-yellow-500 focus:ring-2 focus:ring-yellow-500/20 transition-all"
+                        className="w-full px-4 py-3 bg-white/10 border border-white/20 text-white rounded-lg focus:bg-white/15 focus:border-yellow-500 focus:ring-2 focus:ring-yellow-500/20 transition-all placeholder-gray-400 placeholder-gray-400"
                         placeholder="https://linkedin.com/in/yourprofile"
                       />
                     </div>
                     
                     <div>
-                      <label htmlFor="portfolio" className="block text-sm font-medium text-gray-700 mb-2">
+                      <label htmlFor="portfolio" className="block text-sm font-medium text-gray-300 mb-2">
                         Portfolio/Website URL
                       </label>
                       <input
                         type="url"
                         id="portfolio"
                         name="portfolio"
-                        className="w-full px-4 py-3 bg-gray-100 border border-gray-300 text-gray-900 rounded-lg focus:bg-white focus:border-yellow-500 focus:ring-2 focus:ring-yellow-500/20 transition-all"
+                        className="w-full px-4 py-3 bg-white/10 border border-white/20 text-white rounded-lg focus:bg-white/15 focus:border-yellow-500 focus:ring-2 focus:ring-yellow-500/20 transition-all placeholder-gray-400 placeholder-gray-400"
                         placeholder="https://yourportfolio.com"
                       />
                     </div>
                   </div>
 
                   <div>
-                    <label htmlFor="resume" className="block text-sm font-medium text-gray-700 mb-2">
+                    <label htmlFor="resume" className="block text-sm font-medium text-gray-300 mb-2">
                       Resume Upload *
                     </label>
                     <div className="relative">
@@ -430,94 +401,53 @@ const Careers = () => {
                         required
                         accept=".pdf,.doc,.docx"
                         onChange={handleFileChange}
-                        className="w-full px-4 py-3 bg-gray-100 border border-gray-300 text-gray-900 rounded-lg focus:bg-white focus:border-yellow-500 focus:ring-2 focus:ring-yellow-500/20 transition-all file:mr-4 file:py-2 file:px-4 file:rounded-lg file:border-0 file:text-sm file:font-semibold file:bg-yellow-500 file:text-black hover:file:bg-yellow-600"
+                        className="w-full px-4 py-3 bg-white/10 border border-white/20 text-white rounded-lg focus:bg-white/15 focus:border-yellow-500 focus:ring-2 focus:ring-yellow-500/20 transition-all placeholder-gray-400 file:mr-4 file:py-2 file:px-4 file:rounded-lg file:border-0 file:text-sm file:font-semibold file:bg-yellow-500 file:text-black hover:file:bg-yellow-600"
                       />
                       <Upload className="absolute right-3 top-1/2 transform -translate-y-1/2 h-5 w-5 text-gray-400 pointer-events-none" />
                     </div>
                     {selectedFile && (
-                      <p className="text-sm text-gray-600 mt-1">Selected: {selectedFile.name}</p>
+                      <p className="text-sm text-gray-400 mt-1">Selected: {selectedFile.name}</p>
                     )}
                   </div>
                 </div>
 
-                {/* Interest & Availability */}
+                {/* Security Clearance */}
                 <div className="space-y-4">
-                  <h3 className="text-lg font-bold text-gray-900 border-b border-gray-200 pb-2">Interest & Availability</h3>
+                  <h3 className="text-lg font-bold text-white border-b border-white/20 pb-2">Security Information</h3>
                   
+
                   <div>
-                    <label htmlFor="areaOfInterest" className="block text-sm font-medium text-gray-700 mb-2">
-                      Area of Interest *
+                    <label htmlFor="clearance" className="block text-sm font-medium text-gray-300 mb-2">
+                      Security Clearance Level
                     </label>
                     <select
-                      id="areaOfInterest"
-                      name="areaOfInterest"
-                      required
-                      className="w-full px-4 py-3 bg-gray-100 border border-gray-300 text-gray-900 rounded-lg focus:bg-white focus:border-yellow-500 focus:ring-2 focus:ring-yellow-500/20 transition-all"
+                      id="clearance"
+                      name="clearance"
+                      className="w-full px-4 py-3 bg-white/10 border border-white/20 text-white rounded-lg focus:bg-white/15 focus:border-yellow-500 focus:ring-2 focus:ring-yellow-500/20 transition-all placeholder-gray-400"
                     >
-                      <option value="">Select an area</option>
-                      <option value="Human-Centered Design">Human-Centered Design</option>
-                      <option value="Product Strategy">Product Strategy</option>
-                      <option value="Data-Driven Insights">Data-Driven Insights</option>
-                      <option value="Continuous Delivery">Continuous Delivery</option>
-                      <option value="Cloud Modernization">Cloud Modernization</option>
-                      <option value="DevSecOps">DevSecOps</option>
+                      <option value="">Select clearance level</option>
+                      <option value="None">None</option>
+                      <option value="Public Trust">Public Trust</option>
+                      <option value="Secret">Secret</option>
+                      <option value="Top Secret">Top Secret</option>
+                      <option value="TS/SCI">TS/SCI</option>
                       <option value="Other">Other</option>
                     </select>
-                  </div>
-
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                    <div>
-                      <label htmlFor="clearance" className="block text-sm font-medium text-gray-700 mb-2">
-                        Security Clearance Level
-                      </label>
-                      <select
-                        id="clearance"
-                        name="clearance"
-                        className="w-full px-4 py-3 bg-gray-100 border border-gray-300 text-gray-900 rounded-lg focus:bg-white focus:border-yellow-500 focus:ring-2 focus:ring-yellow-500/20 transition-all"
-                      >
-                        <option value="">Select clearance level</option>
-                        <option value="None">None</option>
-                        <option value="Public Trust">Public Trust</option>
-                        <option value="Secret">Secret</option>
-                        <option value="Top Secret">Top Secret</option>
-                        <option value="TS/SCI">TS/SCI</option>
-                        <option value="Other">Other</option>
-                      </select>
-                    </div>
-                    
-                    <div>
-                      <label htmlFor="availability" className="block text-sm font-medium text-gray-700 mb-2">
-                        Availability *
-                      </label>
-                      <select
-                        id="availability"
-                        name="availability"
-                        required
-                        className="w-full px-4 py-3 bg-gray-100 border border-gray-300 text-gray-900 rounded-lg focus:bg-white focus:border-yellow-500 focus:ring-2 focus:ring-yellow-500/20 transition-all"
-                      >
-                        <option value="">Select availability</option>
-                        <option value="Immediately">Immediately</option>
-                        <option value="Within 2 weeks">Within 2 weeks</option>
-                        <option value="Within 1 month">Within 1 month</option>
-                        <option value="Within 3 months">Within 3 months</option>
-                        <option value="Just exploring">Just exploring</option>
-                      </select>
-                    </div>
                   </div>
                 </div>
 
                 {/* Additional Information */}
                 <div className="space-y-4">
-                  <h3 className="text-lg font-bold text-gray-900 border-b border-gray-200 pb-2">Additional Information</h3>
+                  <h3 className="text-lg font-bold text-white border-b border-white/20 pb-2">Additional Information</h3>
                   
                   <div>
-                    <label htmlFor="hearAbout" className="block text-sm font-medium text-gray-700 mb-2">
+                    <label htmlFor="hearAbout" className="block text-sm font-medium text-gray-300 mb-2">
                       How did you hear about us?
                     </label>
                     <select
                       id="hearAbout"
                       name="hearAbout"
-                      className="w-full px-4 py-3 bg-gray-100 border border-gray-300 text-gray-900 rounded-lg focus:bg-white focus:border-yellow-500 focus:ring-2 focus:ring-yellow-500/20 transition-all"
+                      className="w-full px-4 py-3 bg-white/10 border border-white/20 text-white rounded-lg focus:bg-white/15 focus:border-yellow-500 focus:ring-2 focus:ring-yellow-500/20 transition-all placeholder-gray-400"
                     >
                       <option value="">Select an option</option>
                       <option value="Website">Website</option>
@@ -529,14 +459,14 @@ const Careers = () => {
                   </div>
 
                   <div>
-                    <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-2">
+                    <label htmlFor="message" className="block text-sm font-medium text-gray-300 mb-2">
                       Message/Cover Letter
                     </label>
                     <textarea
                       id="message"
                       name="message"
                       rows={4}
-                      className="w-full px-4 py-3 bg-gray-100 border border-gray-300 text-gray-900 rounded-lg focus:bg-white focus:border-yellow-500 focus:ring-2 focus:ring-yellow-500/20 transition-all"
+                      className="w-full px-4 py-3 bg-white/10 border border-white/20 text-white rounded-lg focus:bg-white/15 focus:border-yellow-500 focus:ring-2 focus:ring-yellow-500/20 transition-all placeholder-gray-400"
                       placeholder="Tell us about yourself and why you're interested in joining our team..."
                     />
                   </div>
