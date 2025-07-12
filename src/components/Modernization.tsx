@@ -12,13 +12,13 @@ const Modernization = () => {
       icon: Users,
       title: "Human-Centered Design",
       subtitle: "Putting people at the center of every solution",
-      description: "Create intuitive, accessible digital experiences through user research and prototyping, reducing friction for citizens and staff."
+      description: "Create intuitive, accessible digital experiences through user research and prototyping, reducing friction for citizens."
     },
     {
       icon: Target,
       title: "Product Strategy",
       subtitle: "Digital transformation through agile execution",
-      description: "Align stakeholder goals with technical delivery through data-informed roadmaps and agile practices for measurable results."
+      description: "Build strategic roadmaps that align stakeholder goals with technical delivery through agile practices."
     },
     {
       icon: BarChart3,
@@ -30,18 +30,18 @@ const Modernization = () => {
       icon: Lightbulb,
       title: "Continuous Delivery",
       subtitle: "Cloud-native engineering at scale",
-      description: "Build and deploy modern applications with automated pipelines and cloud-first architecture, accelerating time-to-value."
+      description: "Deploy modern applications through automated CI/CD pipelines and cloud-native architecture."
     },
     {
       icon: Cloud,
       title: "Cloud Modernization",
-      subtitle: "Infrastructure for speed and reliability",
-      description: "Transform legacy systems with cloud-native architectures and platform engineering for reduced costs and improved performance."
+      subtitle: "Infrastructure for speed, cost savings, and reliability",
+      description: "Migrate legacy systems to cloud-native architectures for improved performance and cost savings."
     },
     {
       icon: Cog,
       title: "DevSecOps",
-      subtitle: "Security and delivery at the speed of mission",
+      subtitle: "Security and delivery, with speed",
       description: "Accelerate deployment cycles while maintaining security through automated pipelines and continuous monitoring."
     }
   ];

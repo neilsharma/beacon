@@ -16,7 +16,7 @@ export const BenefitCard: React.FC<BenefitCardProps> = ({
   className = ""
 }) => {
   return (
-    <div className={`text-center group bg-gradient-to-b from-modernization-gradient-start to-black backdrop-blur-sm border border-card-border rounded-xl p-8 hover:border-white/10 transition-all duration-300 shadow-lg ${className}`}>
+    <div className={`text-center group bg-gradient-to-b from-modernization-gradient-start to-black backdrop-blur-sm border border-card-border rounded-xl p-8 hover:border-white/10 transition-all duration-300 shadow-lg min-h-[260px] flex flex-col ${className}`}>
       <div className="mb-6">
         <div className="inline-flex items-center justify-center w-16 h-16 bg-white/10 rounded-full shadow-lg">
           <Icon className="h-8 w-8 text-white" strokeWidth={1.5} />
@@ -33,7 +33,7 @@ export const BenefitCard: React.FC<BenefitCardProps> = ({
         </p>
       )}
       
-      <p className="text-description leading-relaxed text-sm">
+      <p className="text-description leading-relaxed text-sm flex-1">
         {description}
       </p>
     </div>

@@ -19,8 +19,9 @@ const Partners = () => {
   const duplicatedPartners = [...partners, ...partners];
 
   // Calculate animation distance (width of one complete set)
-  const itemWidth = 240; // Updated for larger logos + spacing
-  const totalWidth = (partners.length * 240) + (partners.length - 1) * 16; // Account for item width and gaps
+  const itemWidth = 204; // Container width (240 - 36)
+  const gapWidth = 16; // space-x-4 gap
+  const totalWidth = partners.length * (itemWidth + gapWidth); // Actual rendered width per set
 
   return (
     <section id="results" className="py-20 bg-gray-100">
@@ -56,7 +57,7 @@ const Partners = () => {
               <div
                 key={`${partner.name}-${index}`}
                 className="flex-shrink-0 flex items-center justify-center"
-                style={{ width: `${itemWidth - 36}px`, height: '240px' }} // Fixed container size
+                style={{ width: `${itemWidth}px`, height: '240px' }} // Fixed container size
               >
               {partner.name === 'U.S. Digital Service' ? (
                   // Special handling for USDS logo to make it perfectly circular
