@@ -1,0 +1,41 @@
+import React from 'react';
+
+interface BenefitCardProps {
+  icon: LucideIcon;
+  title: string;
+  subtitle?: string;
+  description: string;
+  className?: string;
+}
+
+export const BenefitCard: React.FC<BenefitCardProps> = ({
+  icon: Icon,
+  title,
+  subtitle,
+  description,
+  className = ""
+}) => {
+  return (
+    <div className={`text-center group bg-gradient-to-b from-modernization-gradient-start to-black backdrop-blur-sm border border-card-border rounded-xl p-8 hover:border-white/10 transition-all duration-300 shadow-lg ${className}`}>
+      <div className="mb-6">
+        <div className="inline-flex items-center justify-center w-16 h-16 bg-white/10 rounded-full shadow-lg">
+          <Icon className="h-8 w-8 text-white" strokeWidth={1.5} />
+        </div>
+      </div>
+      
+      <h3 className="text-xl font-bold text-title mb-2">
+        {title}
+      </h3>
+      
+      {subtitle && (
+        <p className="text-subtitle font-medium mb-4 text-sm">
+          {subtitle}
+        </p>
+      )}
+      
+      <p className="text-description leading-relaxed text-sm">
+        {description}
+      </p>
+    </div>
+  );
+};
