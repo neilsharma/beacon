@@ -11,7 +11,12 @@ import {
   Clock,
   Laptop,
   Upload,
-  Send
+  Send,
+  FileText,
+  MessageCircle,
+  Code,
+  HandHeart,
+  CheckCircle
 } from 'lucide-react';
 import { useForm, ValidationError } from '@formspree/react';
 import Header from '../components/Header';
@@ -141,7 +146,7 @@ const Careers = () => {
 
   if (state.succeeded) {
     return (
-      <div className="min-h-screen bg-black">
+      <div className="min-h-screen bg-black overflow-x-hidden">
         <Header />
         <div className="pt-[150px] pb-32 flex items-center justify-center">
           <div className="max-w-2xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
@@ -168,45 +173,27 @@ const Careers = () => {
   }
 
   return (
-    <div className="min-h-screen bg-black">
+    <div className="min-h-screen bg-black overflow-x-hidden">
       <Header />
       
-      {/* Hero Section */}
-      <div className="relative pt-[150px] pb-32 flex items-center justify-center bg-black">
+      {/* Hero Section with Why Work With Us */}
+      <section className="relative pt-[150px] pb-20 bg-black overflow-hidden">
+        <SectionGlow opacity="8%" position="top-[-300px]" />
         
-        <div className="relative max-w-7xl xl:max-w-screen-2xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <div className="relative max-w-7xl xl:max-w-screen-2xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <motion.div
+            className="text-center mb-16"
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
           >
-            <h1 className="text-6xl md:text-7xl font-bold text-title mb-6">
+            <h1 className="text-6xl md:text-7xl font-bold text-title mb-8">
               Join Our Mission
             </h1>
-            <h2 className="text-4xl md:text-5xl font-bold text-subtitle mb-8">
-              Modernizing Government for the Digital Age
-            </h2>
-            <p className="text-xl text-description max-w-4xl mx-auto mb-8">
-              Help us transform how government serves citizens. Join a team of mission-driven technologists building solutions that make a real difference in people's lives.
-            </p>
-            <p className="text-lg text-description max-w-3xl mx-auto">
-              We're looking for passionate professionals who want to tackle complex challenges, work with cutting-edge technology, and create lasting impact in the public sector.
+            <p className="text-xl text-description max-w-4xl mx-auto">
+              Help us transform how government serves citizens through cutting-edge technology and meaningful impact.
             </p>
           </motion.div>
-        </div>
-      </div>
-
-      {/* Why Work With Us */}
-      <section className="py-20 bg-black relative overflow-hidden">
-        <SectionBorder />
-        <SectionGlow opacity="8%" position="top-[-300px]" />
-        
-        <div className="max-w-7xl xl:max-w-screen-2xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold text-title mb-4">
-              Why Work With Us
-            </h2>
-          </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-6xl mx-auto justify-items-center">
             {whyWorkWithUs.map((item, index) => (
@@ -215,7 +202,7 @@ const Careers = () => {
                 className="flex items-start space-x-4"
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: index * 0.1 }}
+                transition={{ duration: 0.6, delay: index * 0.1 + 0.4 }}
                 viewport={{ once: true }}
               >
                 <div className="flex-shrink-0">
@@ -254,7 +241,7 @@ const Careers = () => {
                 transition={{ duration: 0.6, delay: index * 0.1 }}
                 viewport={{ once: true }}
               >
-                <div className="mb-6">
+                <div className="mb-6 text-center">
                   <div className="inline-flex items-center justify-center w-12 h-12 bg-white/10 rounded-full shadow-lg mb-4">
                     <benefit.icon className="h-6 w-6 text-white" strokeWidth={1.5} />
                   </div>
@@ -292,12 +279,21 @@ const Careers = () => {
             {hiringProcess.map((step, index) => (
               <motion.div
                 key={index}
+                className="flex items-start space-x-4"
                 initial={{ opacity: 0, x: -30 }}
                 whileInView={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.6, delay: index * 0.1 }}
                 viewport={{ once: true }}
               >
-                <ProcessStep {...step} />
+                <div className="flex-shrink-0">
+                  <div className="inline-flex items-center justify-center w-8 h-8 bg-white/10 rounded-full">
+                    <span className="text-white font-bold text-sm">{step.number}</span>
+                  </div>
+                </div>
+                <div className="flex-1">
+                  <div className="text-white font-bold mb-2 text-xl">{step.title}</div>
+                  <div className="text-gray-300 text-base leading-relaxed">{step.description}</div>
+                </div>
               </motion.div>
             ))}
           </div>
@@ -401,7 +397,7 @@ const Careers = () => {
                         required
                         accept=".pdf,.doc,.docx"
                         onChange={handleFileChange}
-                        className="w-full px-4 py-3 bg-white/10 border border-white/20 text-white rounded-lg focus:bg-white/15 focus:border-yellow-500 focus:ring-2 focus:ring-yellow-500/20 transition-all placeholder-gray-400 file:mr-4 file:py-2 file:px-4 file:rounded-lg file:border-0 file:text-sm file:font-semibold file:bg-yellow-500 file:text-black hover:file:bg-yellow-600"
+                        className="w-full px-4 py-3 bg-white/10 border border-white/20 text-white rounded-lg focus:bg-white/15 focus:border-yellow-500 focus:ring-2 focus:ring-yellow-500/20 transition-all placeholder-gray-400 file:mr-4 file:py-2 file:px-4 file:rounded-lg file:border-0 file:text-sm file:font-semibold file:bg-white/20 file:text-white hover:file:bg-white/30"
                       />
                       <Upload className="absolute right-3 top-1/2 transform -translate-y-1/2 h-5 w-5 text-gray-400 pointer-events-none" />
                     </div>
