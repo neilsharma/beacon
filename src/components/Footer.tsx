@@ -6,7 +6,7 @@ const Footer = () => {
       <div className="max-w-7xl xl:max-w-screen-2xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex flex-col md:flex-row items-start justify-between gap-8">
           {/* Logo Section */}
-          <div className="flex-1 flex items-center justify-center md:justify-start">
+          <div className="flex-[1] flex items-center justify-center md:justify-start">
             <div className="flex items-center space-x-3">
               <div className="scale-125">
                 <Logo />
@@ -16,7 +16,7 @@ const Footer = () => {
           </div>
           
           {/* Navigation Sections */}
-          <div className="flex flex-col md:flex-row gap-8 md:gap-16">
+          <div className="flex-[3] flex flex-col md:flex-row gap-8 md:gap-12 justify-end">
             {/* Services */}
             <div className="space-y-3">
               <h3 className="text-sm font-semibold text-white">Services</h3>

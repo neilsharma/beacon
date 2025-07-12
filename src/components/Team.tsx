@@ -79,13 +79,13 @@ const Team = () => {
                     <div className="flex space-x-4">
                       <a
                         href="#"
-                        className="inline-flex items-center justify-center w-10 h-10 bg-gray-700 rounded-full text-white hover:bg-yellow-500 hover:text-black transition-colors duration-300"
+                        className="inline-flex items-center justify-center w-10 h-10 bg-white/10 rounded-full text-white hover:bg-yellow-500 hover:text-black transition-colors duration-300"
                       >
                         <Linkedin className="h-5 w-5" />
                       </a>
                       <a
                         href="#"
-                        className="inline-flex items-center justify-center w-10 h-10 bg-gray-700 rounded-full text-white hover:bg-yellow-500 hover:text-black transition-colors duration-300"
+                        className="inline-flex items-center justify-center w-10 h-10 bg-white/10 rounded-full text-white hover:bg-yellow-500 hover:text-black transition-colors duration-300"
                       >
                         <Mail className="h-5 w-5" />
                       </a>

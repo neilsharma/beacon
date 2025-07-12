@@ -54,17 +54,17 @@ const Values = () => {
 
         {/* Values List */}
         <div className="mt-16 max-w-7xl xl:max-w-screen-2xl mx-auto">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto justify-items-center">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-6xl mx-auto justify-items-center">
             {values.map((value, index) => (
               <div key={index} className="flex items-start space-x-4">
                 <div className="flex-shrink-0">
-                  <div className="inline-flex items-center justify-center w-8 h-8 bg-gray-800 rounded-full">
-                    <value.icon className="h-4 w-4 text-white" strokeWidth={1.5} />
+                  <div className="inline-flex items-center justify-center w-10 h-10 bg-white/10 rounded-full">
+                    <value.icon className="h-5 w-5 text-white" strokeWidth={1.5} />
                   </div>
                 </div>
                 <div className="flex-1">
-                  <div className="text-subtitle font-bold mb-1">{value.title}</div>
-                  <div className="text-description text-sm leading-relaxed max-w-xs">{value.description}</div>
+                  <div className="text-subtitle font-bold mb-1 text-lg">{value.title}</div>
+                  <div className="text-description text-base leading-relaxed max-w-md">{value.description}</div>
                 </div>
               </div>
             ))}
