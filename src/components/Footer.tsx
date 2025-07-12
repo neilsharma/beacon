@@ -3,7 +3,7 @@ import LogoWithText from './LogoWithText';
 const Footer = () => {
   return (
     <footer className="bg-black text-white pt-36 pb-16">
-      <div className="max-w-7xl xl:max-w-screen-2xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex flex-col md:flex-row items-start justify-between gap-8">
           {/* Logo Section */}
           <div className="flex-[1] flex items-center justify-center md:justify-start">

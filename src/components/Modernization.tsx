@@ -30,13 +30,13 @@ const Modernization = () => {
       icon: Lightbulb,
       title: "Continuous Delivery",
       subtitle: "Cloud-native engineering at scale",
-      description: "Deploy modern applications through automated CI/CD pipelines and cloud-native architecture."
+      description: "Deploy applications frequently and reliably through automated CI/CD pipelines to maintain velocity."
     },
     {
       icon: Cloud,
       title: "Cloud Modernization",
-      subtitle: "Infrastructure for speed, cost savings, and reliability",
-      description: "Migrate legacy systems to cloud-native architectures for improved performance and cost savings."
+      subtitle: "Infrastructure for cost savings, and reliability",
+      description: "Save money and improve performance by migrating legacy systems to cloud-native environments."
     },
     {
       icon: Cog,
@@ -64,7 +64,7 @@ const Modernization = () => {
         )}
       />
       
-      <div className="max-w-7xl xl:max-w-screen-2xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="text-center mb-16">
           <motion.h2 
             className="text-4xl md:text-5xl font-bold text-white mb-4"

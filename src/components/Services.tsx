@@ -39,7 +39,7 @@ const Services = () => {
       <SectionBorder />
       <SectionGlow opacity="8%" />
       
-      <div className="relative max-w-7xl xl:max-w-screen-2xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <motion.h2 
             className="text-4xl md:text-5xl font-bold text-white mb-6 tracking-tight"

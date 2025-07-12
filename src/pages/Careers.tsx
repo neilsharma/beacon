@@ -180,7 +180,7 @@ const Careers = () => {
       <section className="relative pt-[150px] pb-20 bg-black overflow-hidden">
         <SectionGlow opacity="8%" position="top-[-300px]" />
         
-        <div className="relative max-w-7xl xl:max-w-screen-2xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <motion.div
             className="text-center mb-16"
             initial={{ opacity: 0, y: 30 }}
@@ -224,7 +224,7 @@ const Careers = () => {
       <section className="py-20 bg-black relative">
         <SectionBorder />
         
-        <div className="max-w-7xl xl:max-w-screen-2xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold text-title mb-4">
               Benefits & Compensation
@@ -268,7 +268,7 @@ const Careers = () => {
       <section className="py-20 bg-black relative">
         <SectionBorder />
         
-        <div className="max-w-7xl xl:max-w-screen-2xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold text-title mb-4">
               Our Hiring Process
@@ -304,7 +304,7 @@ const Careers = () => {
       <section className="py-20 bg-black relative overflow-hidden">
         <SectionBorder />
         <SectionGlow opacity="8%" position="top-[-300px]" />
-        <div className="max-w-7xl xl:max-w-screen-2xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
               Get In Touch
