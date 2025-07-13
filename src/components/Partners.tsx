@@ -19,19 +19,20 @@ const Partners = () => {
   const duplicatedPartners = [...partners, ...partners];
 
   // Calculate animation distance (width of one complete set)
-  const itemWidth = 204; // Container width (240 - 36)
+  // Use desktop size for calculation (mobile will scale proportionally)
+  const itemWidth = 204;
   const gapWidth = 16; // space-x-4 gap
   const totalWidth = partners.length * (itemWidth + gapWidth); // Actual rendered width per set
 
   return (
-    <section id="results" className="py-20 bg-gray-100">
+    <section id="results" className="py-12 sm:py-20 bg-gray-100">
       <div>
-        <div className="text-center mb-16">
+        <div className="text-center mb-12 sm:mb-16">
           <div className="mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 mb-4">
               Trusted by Government Leaders
             </h2>
-            <p className="text-xl text-gray-700 max-w-3xl mx-auto">
+            <p className="text-lg sm:text-xl text-gray-700 max-w-3xl mx-auto px-4 sm:px-0">
               We've worked with federal and state government agencies and delivered to millions of citizens and internal employees.
             </p>
           </div>
@@ -56,30 +57,27 @@ const Partners = () => {
             {duplicatedPartners.map((partner, index) => (
               <div
                 key={`${partner.name}-${index}`}
-                className="flex-shrink-0 flex items-center justify-center"
-                style={{ width: `${itemWidth}px`, height: '240px' }} // Fixed container size
+                className="flex-shrink-0 flex items-center justify-center w-24 sm:w-52 h-24 sm:h-60"
               >
               {partner.name === 'U.S. Digital Service' ? (
                   // Special handling for USDS logo to make it perfectly circular
                   <div
-                    className="rounded-full bg-white flex items-center justify-center"
+                    className="w-20 sm:w-48 h-20 sm:h-48 rounded-full bg-white flex items-center justify-center"
                     style={{
-                      width: '200px',
-                      height: '200px',
                       border: `3px solid ${partner.borderColor}`,
                     }}
                   >
                     <img
                       src={partner.logo}
                       alt={partner.name}
-                      className="object-contain w-28 h-28" // Smaller logo inside the circle
+                      className="object-contain w-10 sm:w-28 h-10 sm:h-28" // Responsive logo inside the circle
                     />
                   </div>
                 ) : (
                   <img
                     src={partner.logo}
                     alt={partner.name}
-                    className={`object-contain h-60 w-60 ${partner.rounded ? 'rounded-2xl' : ''}`}
+                    className={`object-contain h-20 sm:h-60 w-20 sm:w-60 ${partner.rounded ? 'rounded-2xl' : ''}`}
                     style={partner.needsBorder && partner.name !== 'U.S. Digital Service' ? {
                       border: `2px solid ${partner.borderColor}`,
                       borderRadius: partner.rounded ? '32px' : '32px',
@@ -92,10 +90,10 @@ const Partners = () => {
         </div>
         
         {/* Stats below the logos */}
-        <div className="text-center mt-16">
+        <div className="text-center mt-12 sm:mt-16">
           <div className="mx-auto px-4 sm:px-6 lg:px-8">
             <div className="max-w-2xl mx-auto">
-              <p className="text-lg text-gray-700 leading-relaxed font-medium">
+              <p className="text-base sm:text-lg text-gray-700 leading-relaxed font-medium">
                 <span className="text-yellow-500 font-semibold">12</span> agencies engaged
                 <span className="mx-2">|</span>
                 <span className="text-yellow-500 font-semibold">10+</span> years with government

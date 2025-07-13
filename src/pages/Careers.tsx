@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import {
   Heart,
@@ -11,24 +11,22 @@ import {
   Clock,
   Laptop,
   Upload,
-  Send,
-  FileText,
-  MessageCircle,
-  Code,
-  HandHeart,
-  CheckCircle
+  Send
 } from 'lucide-react';
 import { useForm, ValidationError } from '@formspree/react';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 import { SectionBorder } from '../components/ui/section-border';
 import { SectionGlow } from '../components/ui/section-glow';
-import { BenefitCard } from '../components/ui/benefit-card';
-import { ProcessStep } from '../components/ui/process-step';
 
 const Careers = () => {
   const [state, handleSubmit] = useForm("xjkrnjnr"); // Replace with your Formspree form ID
   const [selectedFile, setSelectedFile] = useState<File | null>(null);
+
+  // Scroll to top when component mounts
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
   const whyWorkWithUs = [
     {
@@ -409,7 +407,6 @@ const Careers = () => {
 
                 {/* Security Clearance */}
                 <div className="space-y-4">
-                  <h3 className="text-lg font-bold text-white border-b border-white/20 pb-2">Security Information</h3>
                   
 
                   <div>
@@ -434,25 +431,7 @@ const Careers = () => {
 
                 {/* Additional Information */}
                 <div className="space-y-4">
-                  <h3 className="text-lg font-bold text-white border-b border-white/20 pb-2">Additional Information</h3>
                   
-                  <div>
-                    <label htmlFor="hearAbout" className="block text-sm font-medium text-gray-300 mb-2">
-                      How did you hear about us?
-                    </label>
-                    <select
-                      id="hearAbout"
-                      name="hearAbout"
-                      className="w-full px-4 py-3 bg-white/10 border border-white/20 text-white rounded-lg focus:bg-white/15 focus:border-yellow-500 focus:ring-2 focus:ring-yellow-500/20 transition-all placeholder-gray-400"
-                    >
-                      <option value="">Select an option</option>
-                      <option value="Website">Website</option>
-                      <option value="LinkedIn">LinkedIn</option>
-                      <option value="Referral">Referral</option>
-                      <option value="Job Board">Job Board</option>
-                      <option value="Other">Other</option>
-                    </select>
-                  </div>
 
                   <div>
                     <label htmlFor="message" className="block text-sm font-medium text-gray-300 mb-2">

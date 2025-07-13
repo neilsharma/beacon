@@ -14,21 +14,21 @@ const Team = () => {
       name: "Neil Sharma",
       role: "Co-Founder & CTO",
       bio: "Former Chief Technology Officer at Federal IT Services with expertise in secure AI deployment. Master's in Cybersecurity from MIT, leading government AI initiatives for over a decade.",
-      image: "https://images.pexels.com/photos/2379004/pexels-photo-2379004.jpeg?auto=compress&cs=tinysrgb&w=400&h=400&dpr=1"
+      image: "/neil-profile-bw.png"
     }
   ];
 
   return (
-    <section id="team" className="pt-20 pb-20 bg-black relative overflow-hidden">
+    <section id="team" className="pt-12 sm:pt-20 pb-12 sm:pb-20 bg-black relative overflow-hidden">
       <div className="max-w-7xl xl:max-w-screen-2xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Team Section */}
-        <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
+        <div className="text-center mb-12 sm:mb-16">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-4">
             Leadership Team
           </h2>
         </div>
 
-        <div className="flex flex-col md:flex-row justify-center md:justify-between items-center gap-12 max-w-5xl mx-auto">
+        <div className="flex flex-col md:flex-row justify-center md:justify-between items-center gap-8 sm:gap-12 max-w-5xl mx-auto">
           {founders.map((founder, index) => (
             <div
               key={index}
@@ -54,25 +54,25 @@ const Team = () => {
                     "fill-white/10",
                   )}
                 />
-                <div className="p-8">
+                <div className="p-6 sm:p-8">
                   <div className="flex flex-col items-center text-center relative z-10">
-                    <div className="relative mb-6">
+                    <div className="relative mb-4 sm:mb-6">
                       <img
                         src={founder.image}
                         alt={founder.name}
-                        className="w-48 h-48 rounded-full object-cover group-hover:scale-105 transition-transform duration-300"
+                        className="w-32 sm:w-48 h-32 sm:h-48 rounded-full object-cover group-hover:scale-105 transition-transform duration-300"
                       />
                     </div>
                     
-                    <h3 className="text-2xl font-bold text-white mb-2">
+                    <h3 className="text-xl sm:text-2xl font-bold text-white mb-2">
                       {founder.name}
                     </h3>
                     
-                    <p className="text-white font-semibold mb-4">
+                    <p className="text-white font-semibold mb-3 sm:mb-4 text-sm sm:text-base">
                       {founder.role}
                     </p>
                     
-                    <p className="text-white leading-relaxed mb-6">
+                    <p className="text-white leading-relaxed mb-4 sm:mb-6 text-sm sm:text-base">
                       {founder.bio}
                     </p>
                     

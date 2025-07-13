@@ -15,7 +15,7 @@ const LogoWithText = ({ className = "", logoScale }: LogoWithTextProps) => {
       ) : (
         <Logo />
       )}
-      <span className="text-2xl font-bold text-white">BEACON</span>
+      <span className="text-xl sm:text-2xl font-bold text-white">BEACON</span>
     </div>
   );
 };

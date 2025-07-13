@@ -47,7 +47,7 @@ const Modernization = () => {
   ];
 
   return (
-    <section id="modernization" className="py-20 bg-black relative overflow-hidden">
+    <section id="modernization" className="py-12 sm:py-20 bg-black relative overflow-hidden">
       <SectionBorder />
       <SectionGlow opacity="8%" position="top-[-300px]" />
       
@@ -65,9 +65,9 @@ const Modernization = () => {
       />
       
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <div className="text-center mb-16">
+        <div className="text-center mb-12 sm:mb-16">
           <motion.h2 
-            className="text-4xl md:text-5xl font-bold text-white mb-4"
+            className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-4"
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
@@ -77,7 +77,7 @@ const Modernization = () => {
             <span className="block text-white">for the Digital Age</span>
           </motion.h2>
           <motion.p 
-            className="text-xl text-white max-w-3xl mx-auto"
+            className="text-lg sm:text-xl text-white max-w-3xl mx-auto px-4 sm:px-0"
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
@@ -87,7 +87,7 @@ const Modernization = () => {
           </motion.p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
           {modernizationCards.map((card, index) => (
             <motion.div
               key={index}

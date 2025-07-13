@@ -35,14 +35,14 @@ const Services = () => {
   ];
 
   return (
-    <section id="services" className="py-20 bg-black relative overflow-hidden">
+    <section id="services" className="py-12 sm:py-20 bg-black relative overflow-hidden">
       <SectionBorder />
       <SectionGlow opacity="8%" />
       
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16">
+        <div className="text-center mb-12 sm:mb-16">
           <motion.h2 
-            className="text-4xl md:text-5xl font-bold text-white mb-6 tracking-tight"
+            className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-6 tracking-tight"
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
@@ -54,7 +54,7 @@ const Services = () => {
             <span className="block text-white">Through Intelligent AI</span>
           </motion.h2>
           <motion.p 
-            className="text-xl md:text-2xl text-white/90 max-w-4xl mx-auto font-light leading-relaxed"
+            className="text-lg sm:text-xl md:text-2xl text-white/90 max-w-4xl mx-auto font-light leading-relaxed px-4 sm:px-0"
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
@@ -64,7 +64,7 @@ const Services = () => {
           </motion.p>
         </div>
 
-        <div className="space-y-24 text-white">
+        <div className="space-y-16 sm:space-y-24 text-white">
           {services.map((service, index) => (
             <div key={index} className="relative">
               {/* Service border */}
@@ -73,9 +73,9 @@ const Services = () => {
               )}
               
               <motion.div
-                className={`flex flex-col lg:flex-row items-center gap-16 ${
+                className={`flex flex-col lg:flex-row items-center gap-8 sm:gap-16 ${
                   index % 2 === 1 ? 'lg:flex-row-reverse' : ''
-                } pt-24`}
+                } pt-16 sm:pt-24`}
                 initial={{ opacity: 0, y: 50 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: index * 0.2 }}
@@ -83,19 +83,19 @@ const Services = () => {
               >
                 {/* Content */}
                 <div className="flex-1 space-y-8">
-                  <div className="flex items-center space-x-6">
-                    <div className="flex-shrink-0 inline-flex items-center justify-center w-20 h-20 bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-sm border border-white/20 rounded-2xl shadow-lg">
+                  <div className="flex flex-col sm:flex-row items-center sm:items-start space-y-4 sm:space-y-0 sm:space-x-6 text-center sm:text-left">
+                    <div className="flex-shrink-0 inline-flex items-center justify-center w-16 sm:w-20 h-16 sm:h-20 bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-sm border border-white/20 rounded-2xl shadow-lg">
                       <service.icon 
-                        className="h-10 w-10" 
+                        className="h-8 sm:h-10 w-8 sm:w-10" 
                         primaryColor="#FFFFFF" 
                         secondaryColor="rgba(255, 255, 255, 0.4)" 
                       />
                     </div>
                     <div className="flex-1">
-                      <h3 className="text-3xl font-bold text-white mb-4 tracking-tight leading-tight">
+                      <h3 className="text-2xl sm:text-3xl font-bold text-white mb-4 tracking-tight leading-tight">
                         {service.title}
                       </h3>
-                      <p className="text-lg text-white/90 leading-relaxed font-light">
+                      <p className="text-base sm:text-lg text-white/90 leading-relaxed font-light">
                         {service.description}
                       </p>
                     </div>
@@ -111,7 +111,7 @@ const Services = () => {
                     <img
                       src={service.image}
                       alt={service.title}
-                      className="w-full h-64 object-cover"
+                      className="w-full h-48 sm:h-64 object-cover"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent"></div>
                     <div className="absolute bottom-6 left-6 right-6">

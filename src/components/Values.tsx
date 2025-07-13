@@ -35,36 +35,36 @@ const Values = () => {
   ];
 
   return (
-    <section id="values" className="pb-20 bg-black relative overflow-hidden">
+    <section id="values" className="pb-12 sm:pb-20 bg-black relative overflow-hidden">
       <div className="max-w-7xl xl:max-w-screen-2xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Values Section */}
         <div className="relative">
           {/* Border above Core Values */}
           <div className="absolute top-0 left-[-100vw] right-[-100vw] h-px bg-gradient-to-r from-black from-35% via-white/20 to-black to-65%"></div>
           
-          <div className="text-center mb-16 pt-20">
-            <h2 className="text-4xl md:text-5xl font-bold text-title mb-4">
+          <div className="text-center mb-12 sm:mb-16 pt-12 sm:pt-20">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-title mb-4">
               Our Values
             </h2>
-            <p className="text-xl text-subtitle max-w-3xl mx-auto">
+            <p className="text-lg sm:text-xl text-subtitle max-w-3xl mx-auto px-4 sm:px-0">
               Principles we operate on to ensure the public good
             </p>
           </div>
         </div>
 
         {/* Values List */}
-        <div className="mt-16 max-w-7xl xl:max-w-screen-2xl mx-auto">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-6xl mx-auto justify-items-center">
+        <div className="mt-12 sm:mt-16 max-w-7xl xl:max-w-screen-2xl mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8 max-w-6xl mx-auto justify-items-center">
             {values.map((value, index) => (
-              <div key={index} className="flex items-start space-x-4">
+              <div key={index} className="flex items-start space-x-3 sm:space-x-4">
                 <div className="flex-shrink-0">
-                  <div className="inline-flex items-center justify-center w-10 h-10 bg-white/10 rounded-full">
-                    <value.icon className="h-5 w-5 text-white" strokeWidth={1.5} />
+                  <div className="inline-flex items-center justify-center w-8 sm:w-10 h-8 sm:h-10 bg-white/10 rounded-full">
+                    <value.icon className="h-4 sm:h-5 w-4 sm:w-5 text-white" strokeWidth={1.5} />
                   </div>
                 </div>
                 <div className="flex-1">
-                  <div className="text-subtitle font-bold mb-1 text-lg">{value.title}</div>
-                  <div className="text-description text-base leading-relaxed max-w-md">{value.description}</div>
+                  <div className="text-subtitle font-bold mb-1 text-base sm:text-lg">{value.title}</div>
+                  <div className="text-description text-sm sm:text-base leading-relaxed max-w-md">{value.description}</div>
                 </div>
               </div>
             ))}
