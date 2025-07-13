@@ -8,13 +8,13 @@ const Team = () => {
       name: "Randall Weidberg",
       role: "Co-Founder & CEO",
       bio: "Former AI Director at the Department of Defense with 15+ years in government technology. PhD in Computer Science from Stanford, specializing in machine learning for public sector applications.",
-      image: "https://images.pexels.com/photos/3184360/pexels-photo-3184360.jpeg?auto=compress&cs=tinysrgb&w=400&h=400&dpr=1"
+      image: "/randall-profile-realistic.png"
     },
     {
       name: "Neil Sharma",
       role: "Co-Founder & CTO",
-      bio: "Former Chief Technology Officer at Federal IT Services with expertise in secure AI deployment. Master's in Cybersecurity from MIT, leading government AI initiatives for over a decade.",
-      image: "/neil-profile-bw.png"
+      bio: "Technology leader who delivered AI solutions at DHS AI Corps and launched services at USDS (White House). Led engineering teams at top Silicon Valley companies. UC Berkeley graduate.",
+      image: "/neil-profile-realistic.png"
     }
   ];
 
@@ -78,13 +78,13 @@ const Team = () => {
                     
                     <div className="flex space-x-4">
                       <a
-                        href="#"
+                        href={founder.name === "Randall Weidberg" ? "https://www.linkedin.com/in/randallweidberg/" : "https://www.linkedin.com/in/neilshar/"}
                         className="inline-flex items-center justify-center w-10 h-10 bg-white/10 rounded-full text-white hover:bg-yellow-500 hover:text-black transition-colors duration-300"
                       >
                         <Linkedin className="h-5 w-5" />
                       </a>
                       <a
-                        href="#"
+                        href={`mailto:${founder.name === "Randall Weidberg" ? "randall@teambeacon.ai" : "neil@teambeacon.ai"}`}
                         className="inline-flex items-center justify-center w-10 h-10 bg-white/10 rounded-full text-white hover:bg-yellow-500 hover:text-black transition-colors duration-300"
                       >
                         <Mail className="h-5 w-5" />
