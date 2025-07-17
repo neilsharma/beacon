@@ -7,13 +7,13 @@ const Team = () => {
     {
       name: "Randall Weidberg",
       role: "Co-Founder & CEO",
-      bio: "Former AI Director at the Department of Defense with 15+ years in government technology. PhD in Computer Science from Stanford, specializing in machine learning for public sector applications.",
+      bio: "Digital transformation leader with 15+ years across government, startups, and Fortune 500s. Randall led initiatives at DoD, DHS, VA, and the White House USDS, improving services for millions of Americans. With successful exits, he drives AI-powered, human-centered solutions to modernize government and strengthen national defense.",
       image: "/randall-profile-realistic.png"
     },
     {
       name: "Neil Sharma",
       role: "Co-Founder & CTO",
-      bio: "Technology leader who delivered AI solutions at DHS AI Corps and launched services at USDS (White House). Led engineering teams at top Silicon Valley companies. UC Berkeley graduate.",
+      bio: "Technology leader who delivered AI solutions at DHS AI Corps, Office of Personnel Management, CDC, Medicare and Medicaid, and the White House. Neil launched products that streamlined services for hundreds of thousands and modernized legacy processes. Led engineering at startups and top Silicon Valley companies. UC Berkeley engineer.",
       image: "/neil-profile-realistic.png"
     }
   ];
@@ -35,11 +35,16 @@ const Team = () => {
                 className="group rounded-xl shadow-lg hover:shadow-xl hover:brightness-110 hover:border-gray-600 transition-all duration-300 overflow-hidden relative max-w-md"
                 style={{ 
                   backgroundColor: 'rgb(11,11,11)', 
-                  border: '1px solid rgb(43,43,43)' 
+                  border: '1px solid rgb(43,43,43)',
+                  boxShadow: '0 0 20px rgba(255, 255, 255, 0.05)'
+                }}
+                onMouseEnter={(e) => {
+                  e.currentTarget.style.boxShadow = '0 0 30px rgba(255, 255, 255, 0.08)';
+                }}
+                onMouseLeave={(e) => {
+                  e.currentTarget.style.boxShadow = '0 0 20px rgba(255, 255, 255, 0.05)';
                 }}
               >
-                {/* Individual card glow - positioned at center of each card */}
-                <div className="absolute top-1/4 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[400px] h-[400px] bg-white opacity-[3%] group-hover:opacity-[6%] rounded-full blur-[60px] pointer-events-none transition-opacity duration-300"></div>
                 
                 {/* Dot Pattern Background for each card */}
                 <DotPattern
@@ -51,7 +56,7 @@ const Team = () => {
                   className={cn(
                     "absolute inset-0",
                     "[mask-image:radial-gradient(300px_circle_at_center,white,transparent)]",
-                    "fill-white/10",
+                    "fill-white/5",
                   )}
                 />
                 <div className="p-6 sm:p-8">
@@ -60,7 +65,7 @@ const Team = () => {
                       <img
                         src={founder.image}
                         alt={founder.name}
-                        className="w-32 sm:w-48 h-32 sm:h-48 rounded-full object-cover group-hover:scale-105 transition-transform duration-300"
+                        className="w-32 sm:w-48 h-32 sm:h-48 rounded-full object-cover"
                       />
                     </div>
                     
