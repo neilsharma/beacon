@@ -10,7 +10,7 @@ interface TypingAnimationProps {
 export function TypingAnimation({
   words,
   className,
-  duration = 2000,
+  duration = 1000,
 }: TypingAnimationProps) {
   const [currentWordIndex, setCurrentWordIndex] = useState(0);
   const [currentText, setCurrentText] = useState("");
@@ -30,8 +30,8 @@ export function TypingAnimation({
         if (currentText.length < currentWord.length) {
           setCurrentText(currentWord.slice(0, currentText.length + 1));
         } else {
-          // Finished typing, wait 2 extra seconds then start deleting
-          setTimeout(() => setIsDeleting(true), duration + 2000);
+          // Finished typing, wait briefly then start deleting
+          setTimeout(() => setIsDeleting(true), duration + 1000);
         }
       } else {
         // Deleting
@@ -43,7 +43,7 @@ export function TypingAnimation({
           setCurrentWordIndex((prev) => (prev + 1) % words.length);
         }
       }
-    }, isDeleting ? 80 : 150);
+    }, isDeleting ? 60 : 80);
 
     return () => clearTimeout(timeout);
   }, [currentText, isDeleting, currentWordIndex, words, duration]);
