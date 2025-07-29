@@ -9,6 +9,7 @@ const Security = () => {
   let mouseY = useMotionValue(0);
 
   const [randomString, setRandomString] = React.useState("");
+  const lastUpdateTime = React.useRef(0);
 
   React.useEffect(() => {
     let str = generateRandomString(8000);
@@ -20,10 +21,14 @@ const Security = () => {
     mouseX.set(clientX - left);
     mouseY.set(clientY - top);
 
-    const str = generateRandomString(8000);
-    setRandomString(str);
+    // Only regenerate text every 150ms to reduce computation
+    const now = Date.now();
+    if (now - lastUpdateTime.current > 150) {
+      const str = generateRandomString(8000);
+      setRandomString(str);
+      lastUpdateTime.current = now;
+    }
   }
-
 
   return (
     <section 
@@ -46,7 +51,7 @@ const Security = () => {
             background: useMotionTemplate`
             radial-gradient(
               400px circle at ${mouseX}px ${mouseY}px,
-              rgba(14, 165, 233, 0.15),
+              rgba(59, 130, 246, 0.15),
               transparent 80%
             )
           `,
@@ -111,7 +116,7 @@ const Security = () => {
             transition={{ duration: 0.6 }}
             viewport={{ once: true }}
           >
-            Hardened Security
+            Security by Design
           </motion.h2>
           <motion.p 
             className="text-lg sm:text-xl text-gray-300 max-w-4xl mx-auto px-4 sm:px-0 leading-relaxed"
@@ -120,7 +125,7 @@ const Security = () => {
             transition={{ duration: 0.6, delay: 0.2 }}
             viewport={{ once: true }}
           >
-            Our security expertise spans <span className="text-white font-extrabold">FedRAMP authorization</span>, <span className="text-white font-extrabold">FISMA compliance</span>, and <span className="text-white font-extrabold">NIST framework implementation</span>. We bring deep knowledge in zero-trust architecture and continuous monitoring to ensure your AI solutions meet federal security standards.
+            Security isn't what we sell—it's how we think. Our deep understanding of <span className="text-white font-extrabold">FedRAMP</span>, <span className="text-white font-extrabold">FISMA</span>, and <span className="text-white font-extrabold">zero-trust principles</span> means every AI solution we architect is built with federal-grade security from the ground up. Your mission-critical systems deserve nothing less than security-first engineering.
           </motion.p>
         </div>
       </div>
@@ -163,7 +168,7 @@ export function EvervaultPattern({ mouseX, mouseY, randomString }: any) {
 
       {/* Mouse interaction gradient background */}
       <motion.div
-        className="absolute inset-0 bg-gradient-to-r from-green-500/20 to-blue-700/20 opacity-0 group-hover:opacity-100 backdrop-blur-xl transition duration-500"
+        className="absolute inset-0 bg-gradient-to-r from-blue-500/20 to-blue-700/20 opacity-0 group-hover:opacity-100 backdrop-blur-xl transition duration-500"
         style={style}
       />
       

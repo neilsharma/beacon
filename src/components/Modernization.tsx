@@ -93,7 +93,12 @@ const Modernization = () => {
               key={index}
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: index * 0.1 }}
+              whileHover={{ scale: 1.02 }}
+              transition={{ 
+                duration: 0.6, 
+                delay: index * 0.1,
+                scale: { duration: 0.2 }
+              }}
               viewport={{ once: true }}
             >
               <BenefitCard 

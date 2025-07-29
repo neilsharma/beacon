@@ -47,7 +47,6 @@ src/
 - **Minimal Changes**: Edit as little code as possible
 - **Type Safety**: Fix TypeScript errors when encountered
 - **Patterns**: Follow existing code patterns and conventions
-- **Testing**: Run tests after implementation
 - **Mobile Optimized**: Ensure mobile responsiveness
 
 ### Error Handling

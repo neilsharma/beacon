@@ -1,3 +1,4 @@
+import { motion } from 'framer-motion';
 import { Linkedin, Mail } from 'lucide-react';
 import { cn } from "@/lib/utils";
 import { DotPattern } from './magicui/dot-pattern';
@@ -30,21 +31,23 @@ const Team = () => {
 
         <div className="flex flex-col md:flex-row justify-center md:justify-between items-center gap-8 sm:gap-12 max-w-5xl mx-auto">
           {founders.map((founder, index) => (
-            <div
+            <motion.div
               key={index}
-                className="group rounded-xl shadow-lg hover:shadow-xl hover:brightness-110 hover:border-gray-600 transition-all duration-300 overflow-hidden relative max-w-md"
-                style={{ 
-                  backgroundColor: 'rgb(11,11,11)', 
-                  border: '1px solid rgb(43,43,43)',
-                  boxShadow: '0 0 20px rgba(255, 255, 255, 0.05)'
-                }}
-                onMouseEnter={(e) => {
-                  e.currentTarget.style.boxShadow = '0 0 30px rgba(255, 255, 255, 0.08)';
-                }}
-                onMouseLeave={(e) => {
-                  e.currentTarget.style.boxShadow = '0 0 20px rgba(255, 255, 255, 0.05)';
-                }}
-              >
+              whileHover={{ scale: 1.02 }}
+              transition={{ type: "tween", duration: 0.15 }}
+              className="group rounded-xl shadow-lg hover:shadow-xl hover:brightness-110 hover:border-gray-600 transition-all duration-300 overflow-hidden relative max-w-md"
+              style={{ 
+                backgroundColor: 'rgb(11,11,11)', 
+                border: '1px solid rgb(43,43,43)',
+                boxShadow: '0 0 20px rgba(255, 255, 255, 0.05)'
+              }}
+              onMouseEnter={(e) => {
+                e.currentTarget.style.boxShadow = '0 0 40px rgba(255, 255, 255, 0.12)';
+              }}
+              onMouseLeave={(e) => {
+                e.currentTarget.style.boxShadow = '0 0 20px rgba(255, 255, 255, 0.05)';
+              }}
+            >
                 
                 {/* Dot Pattern Background for each card */}
                 <DotPattern
@@ -97,7 +100,7 @@ const Team = () => {
                     </div>
                   </div>
                 </div>
-            </div>
+            </motion.div>
           ))}
         </div>
       </div>
