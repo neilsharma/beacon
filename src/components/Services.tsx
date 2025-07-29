@@ -6,6 +6,7 @@ import RocketIcon from './icons/RocketIcon';
 import GearIcon from './icons/GearIcon';
 import DatabaseNewIcon from './icons/DatabaseNewIcon';
 import HireIcon from './icons/HireIcon';
+import { Target, Zap, BarChart3, Users } from 'lucide-react';
 
 const Services = () => {
   const timelineData = [
@@ -14,18 +15,26 @@ const Services = () => {
       icon: RocketIcon,
       textContent: ({ icon: Icon }: { icon?: React.ComponentType<any> }) => (
         <div>
-          <div className="flex items-center mb-4 md:block">
-            {Icon && (
-              <div className="inline-flex items-center justify-center w-16 h-16 rounded-full mr-4 md:hidden border-6 border-black" style={{ backgroundColor: 'rgba(30,30,30,1)' }}>
-                <Icon className="h-6 w-6" primaryColor="#FFFFFF" secondaryColor="rgba(255, 255, 255, 0.4)" />
-              </div>
-            )}
-            <h3 className="text-2xl md:text-3xl font-bold text-white tracking-tight leading-tight">
-              AI Strategy & Assessment
-            </h3>
+          <div className="mb-6">
+            <div className="mb-4 flex items-center gap-2">
+              <Target className="h-4 w-4 text-yellow-500" />
+              <span className="text-yellow-500 text-sm font-bold tracking-wide uppercase">
+                AI Strategy & Assessment
+              </span>
+            </div>
+            <div className="flex items-center mb-6 md:block">
+              {Icon && (
+                <div className="inline-flex items-center justify-center w-16 h-16 rounded-full mr-4 md:hidden border-6 border-black" style={{ backgroundColor: 'rgba(30,30,30,1)' }}>
+                  <Icon className="h-6 w-6" primaryColor="#FFFFFF" secondaryColor="rgba(255, 255, 255, 0.4)" />
+                </div>
+              )}
+              <h3 className="text-2xl md:text-3xl font-bold text-white tracking-tight leading-tight">
+                Strategic AI Roadmaps at Your Fingertips
+              </h3>
+            </div>
           </div>
-          <p className="text-white/90 text-base md:text-lg leading-relaxed font-light">
-            We identify where AI creates the biggest impact in your agency, conducting comprehensive readiness assessments and developing strategic roadmaps that align with your mission objectives.
+          <p className="text-white/80 text-base md:text-lg leading-relaxed font-light">
+            Identify where AI creates the biggest impact in your agency, conducting comprehensive readiness assessments and developing strategic roadmaps that align with your mission objectives.
           </p>
         </div>
       ),
@@ -46,18 +55,26 @@ const Services = () => {
       icon: GearIcon,
       textContent: ({ icon: Icon }: { icon?: React.ComponentType<any> }) => (
         <div>
-          <div className="flex items-center mb-4 md:block">
-            {Icon && (
-              <div className="inline-flex items-center justify-center w-16 h-16 rounded-full mr-4 md:hidden border-6 border-black" style={{ backgroundColor: 'rgba(30,30,30,1)' }}>
-                <Icon className="h-6 w-6" primaryColor="#FFFFFF" secondaryColor="rgba(255, 255, 255, 0.4)" />
-              </div>
-            )}
-            <h3 className="text-2xl md:text-3xl font-bold text-white tracking-tight leading-tight">
-              Workflow Automation
-            </h3>
+          <div className="mb-6">
+            <div className="mb-4 flex items-center gap-2">
+              <Zap className="h-4 w-4 text-yellow-500" />
+              <span className="text-yellow-500 text-sm font-bold tracking-wide uppercase">
+                Workflow Automation
+              </span>
+            </div>
+            <div className="flex items-center mb-6 md:block">
+              {Icon && (
+                <div className="inline-flex items-center justify-center w-16 h-16 rounded-full mr-4 md:hidden border-6 border-black" style={{ backgroundColor: 'rgba(30,30,30,1)' }}>
+                  <Icon className="h-6 w-6" primaryColor="#FFFFFF" secondaryColor="rgba(255, 255, 255, 0.4)" />
+                </div>
+              )}
+              <h3 className="text-2xl md:text-3xl font-bold text-white tracking-tight leading-tight">
+                Intelligent Process Automation at Scale
+              </h3>
+            </div>
           </div>
-          <p className="text-white/90 text-base md:text-lg leading-relaxed font-light">
-            Automate predefined government processes or create intelligent agentic workflows that adapt to dynamic tasks. We implement human-in-the-loop systems for critical decision points, ensuring accountability while maximizing efficiency.
+          <p className="text-white/80 text-base md:text-lg leading-relaxed font-light">
+            Automate predefined government processes or create intelligent agentic workflows that adapt to dynamic tasks. Implement human-in-the-loop systems for critical decision points, ensuring accountability while maximizing efficiency.
           </p>
         </div>
       ),
@@ -78,17 +95,25 @@ const Services = () => {
       icon: DatabaseNewIcon,
       textContent: ({ icon: Icon }: { icon?: React.ComponentType<any> }) => (
         <div>
-          <div className="flex items-center mb-4 md:block">
-            {Icon && (
-              <div className="inline-flex items-center justify-center w-16 h-16 rounded-full mr-4 md:hidden border-6 border-black" style={{ backgroundColor: 'rgba(30,30,30,1)' }}>
-                <Icon className="h-6 w-6" primaryColor="#FFFFFF" secondaryColor="rgba(255, 255, 255, 0.4)" />
-              </div>
-            )}
-            <h3 className="text-2xl md:text-3xl font-bold text-white tracking-tight leading-tight">
-              Data Intelligence
-            </h3>
+          <div className="mb-6">
+            <div className="mb-4 flex items-center gap-2">
+              <BarChart3 className="h-4 w-4 text-yellow-500" />
+              <span className="text-yellow-500 text-sm font-bold tracking-wide uppercase">
+                Data Intelligence
+              </span>
+            </div>
+            <div className="flex items-center mb-6 md:block">
+              {Icon && (
+                <div className="inline-flex items-center justify-center w-16 h-16 rounded-full mr-4 md:hidden border-6 border-black" style={{ backgroundColor: 'rgba(30,30,30,1)' }}>
+                  <Icon className="h-6 w-6" primaryColor="#FFFFFF" secondaryColor="rgba(255, 255, 255, 0.4)" />
+                </div>
+              )}
+              <h3 className="text-2xl md:text-3xl font-bold text-white tracking-tight leading-tight">
+                Data Insights at Your Fingertips
+              </h3>
+            </div>
           </div>
-          <p className="text-white/90 text-base md:text-lg leading-relaxed font-light">
+          <p className="text-white/80 text-base md:text-lg leading-relaxed font-light">
             Transform your agency's data into actionable intelligence with AI-powered analytics platforms that provide real-time insights for better decision-making and citizen services.
           </p>
         </div>
@@ -110,17 +135,25 @@ const Services = () => {
       icon: HireIcon,
       textContent: ({ icon: Icon }: { icon?: React.ComponentType<any> }) => (
         <div>
-          <div className="flex items-center mb-4 md:block">
-            {Icon && (
-              <div className="inline-flex items-center justify-center w-16 h-16 rounded-full mr-4 md:hidden border-6 border-black" style={{ backgroundColor: 'rgba(30,30,30,1)' }}>
-                <Icon className="h-6 w-6" primaryColor="#FFFFFF" secondaryColor="rgba(255, 255, 255, 0.4)" />
-              </div>
-            )}
-            <h3 className="text-2xl md:text-3xl font-bold text-white tracking-tight leading-tight">
-              Team Capability Building
-            </h3>
+          <div className="mb-6">
+            <div className="mb-4 flex items-center gap-2">
+              <Users className="h-4 w-4 text-yellow-500" />
+              <span className="text-yellow-500 text-sm font-bold tracking-wide uppercase">
+                Team Capability Building
+              </span>
+            </div>
+            <div className="flex items-center mb-6 md:block">
+              {Icon && (
+                <div className="inline-flex items-center justify-center w-16 h-16 rounded-full mr-4 md:hidden border-6 border-black" style={{ backgroundColor: 'rgba(30,30,30,1)' }}>
+                  <Icon className="h-6 w-6" primaryColor="#FFFFFF" secondaryColor="rgba(255, 255, 255, 0.4)" />
+                </div>
+              )}
+              <h3 className="text-2xl md:text-3xl font-bold text-white tracking-tight leading-tight">
+                Build AI Expertise That Lasts
+              </h3>
+            </div>
           </div>
-          <p className="text-white/90 text-base md:text-lg leading-relaxed font-light">
+          <p className="text-white/80 text-base md:text-lg leading-relaxed font-light">
             Build lasting AI expertise within your organization through comprehensive training programs, hands-on workshops, and ongoing mentorship that ensures long-term success.
           </p>
         </div>
@@ -145,12 +178,24 @@ const Services = () => {
       <SectionGlow opacity="8%" />
       
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-12 sm:mb-16">
+        <div className="text-center mb-16 sm:mb-20">
+          <motion.div
+            className="inline-flex items-center px-4 py-2 rounded-full bg-yellow-500/10 border border-yellow-500/20 mb-6"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5 }}
+            viewport={{ once: true }}
+          >
+            <span className="text-yellow-500 text-sm font-bold tracking-wide uppercase">
+              Government AI Solutions
+            </span>
+          </motion.div>
+          
           <motion.h2 
-            className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-6 tracking-tight"
+            className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-8 tracking-tight"
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
+            transition={{ duration: 0.6, delay: 0.1 }}
             viewport={{ once: true }}
           >
             <span className="bg-gradient-to-r from-white via-white to-gray-300 bg-clip-text text-transparent">
@@ -162,7 +207,7 @@ const Services = () => {
             className="text-lg sm:text-xl md:text-2xl text-white/90 max-w-4xl mx-auto font-light leading-relaxed px-4 sm:px-0"
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.2 }}
+            transition={{ duration: 0.6, delay: 0.3 }}
             viewport={{ once: true }}
           >
             Empowering agencies to deliver exceptional citizen experiences while reducing costs, accelerating processes, and driving measurable outcomes.

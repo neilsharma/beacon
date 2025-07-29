@@ -4,6 +4,7 @@ import Hero from './components/Hero';
 import Services from './components/Services';
 import Partners from './components/Partners';
 import Modernization from './components/Modernization';
+import Security from './components/Security';
 import Team from './components/Team';
 import Values from './components/Values';
 import Contact from './components/Contact';
@@ -17,6 +18,7 @@ const HomePage = () => {
       <Hero />
       <Services />
       <Modernization />
+      <Security />
       <Partners />
       <Team />
       <Values />

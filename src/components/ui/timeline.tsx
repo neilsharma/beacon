@@ -27,7 +27,7 @@ export const Timeline = ({ data }: { data: TimelineEntry[] }) => {
 
   const { scrollYProgress } = useScroll({
     target: containerRef,
-    offset: ["start 80%", "end 20%"],
+    offset: ["start 60%", "end 40%"],
   });
 
   const heightTransform = useTransform(scrollYProgress, [0, 1], [0, height]);
@@ -38,9 +38,13 @@ export const Timeline = ({ data }: { data: TimelineEntry[] }) => {
       {/* Desktop Timeline Layout */}
       <div ref={ref} className="hidden md:block relative max-w-7xl mx-auto pb-20">
         {data.map((item, index) => (
-          <div
+          <motion.div
             key={index}
             className="grid grid-cols-5 gap-8 items-center pt-12 md:pt-24 pb-6 md:pb-12"
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: index * 0.2 }}
+            viewport={{ once: true }}
           >
             {/* Left side - text for odd indices (0,2,4...), image for even indices (1,3,5...) */}
             <div className="col-span-2">
@@ -51,7 +55,7 @@ export const Timeline = ({ data }: { data: TimelineEntry[] }) => {
 
             {/* Timeline center */}
             <div className="col-span-1 flex justify-center relative">
-              <div className="inline-flex items-center justify-center w-16 h-16 rounded-full shadow-lg z-20 border-4 border-black" style={{ backgroundColor: 'rgba(30,30,30,1)' }}>
+              <div className="inline-flex items-center justify-center w-20 h-20 rounded-full shadow-lg z-20 border-4 border-black" style={{ backgroundColor: 'rgba(30,30,30,1)' }}>
                 {item.icon && (
                   <item.icon 
                     className="h-8 w-8"
@@ -68,7 +72,7 @@ export const Timeline = ({ data }: { data: TimelineEntry[] }) => {
                 typeof item.textContent === 'function' ? item.textContent({}) : item.textContent
               )}
             </div>
-          </div>
+          </motion.div>
         ))}
         
         {/* Vertical timeline line */}
@@ -91,7 +95,14 @@ export const Timeline = ({ data }: { data: TimelineEntry[] }) => {
       {/* Mobile Layout */}
       <div className="block md:hidden max-w-7xl mx-auto pb-20">
         {data.map((item, index) => (
-          <div key={index} className="mb-12">
+          <motion.div 
+            key={index} 
+            className="mb-12"
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: index * 0.2 }}
+            viewport={{ once: true }}
+          >
             {/* Text content with icon */}
             <div className="mb-8">
               {typeof item.textContent === 'function' ? item.textContent({ icon: item.icon }) : item.textContent}
@@ -101,7 +112,7 @@ export const Timeline = ({ data }: { data: TimelineEntry[] }) => {
             <div>
               {item.imageContent}
             </div>
-          </div>
+          </motion.div>
         ))}
       </div>
     </div>
