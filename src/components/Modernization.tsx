@@ -11,13 +11,13 @@ const Modernization = () => {
     {
       icon: Users,
       title: "Human-Centered Design",
-      subtitle: "Putting people at the center of every solution",
+      subtitle: "People-centered solutions",
       description: "Create intuitive, accessible digital experiences through user research and prototyping, reducing friction for citizens."
     },
     {
       icon: Target,
       title: "Product Strategy",
-      subtitle: "Digital transformation through agile execution",
+      subtitle: "Strategic roadmaps with agile delivery",
       description: "Build strategic roadmaps that align stakeholder goals with technical delivery through agile practices."
     },
     {
@@ -29,19 +29,19 @@ const Modernization = () => {
     {
       icon: Lightbulb,
       title: "Continuous Delivery",
-      subtitle: "Cloud-native engineering at scale",
+      subtitle: "Cloud-native engineering",
       description: "Deploy applications frequently and reliably through automated CI/CD pipelines to maintain velocity."
     },
     {
       icon: Cloud,
       title: "Cloud Modernization",
-      subtitle: "Infrastructure for cost savings, and reliability",
+      subtitle: "Infrastructure for cost savings, reliability",
       description: "Save money and improve performance by migrating legacy systems to cloud-native environments."
     },
     {
       icon: Cog,
       title: "DevSecOps",
-      subtitle: "Security and delivery, with speed",
+      subtitle: "Security and delivery with speed",
       description: "Accelerate deployment cycles while maintaining security through automated pipelines and continuous monitoring."
     }
   ];

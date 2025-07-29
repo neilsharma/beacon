@@ -38,7 +38,7 @@ const Footer = () => {
             <div className="space-y-2 sm:space-y-3">
               <h3 className="text-xs sm:text-sm font-semibold text-white">Compliance</h3>
               <div className="space-y-1 sm:space-y-2">
-                <p className="text-xs sm:text-sm text-gray-400">ISO 9001:2015</p>
+                <p className="text-xs sm:text-sm text-gray-400">ISO 5112:2015</p>
                 <p className="text-xs sm:text-sm text-gray-400">FedRAMP Ready</p>
                 <p className="text-xs sm:text-sm text-gray-400">CMMI Level 3</p>
                 <p className="text-xs sm:text-sm text-gray-400">GSA Schedule</p>

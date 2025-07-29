@@ -29,13 +29,13 @@ const Services = () => {
                   <Icon className="h-6 w-6" primaryColor="#FFFFFF" secondaryColor="rgba(255, 255, 255, 0.4)" />
                 </div>
               )}
-              <h3 className="text-2xl md:text-3xl font-bold text-white tracking-tight leading-tight">
+              <h3 className="text-3xl md:text-4xl font-bold text-white tracking-tight leading-tight">
                 Strategic AI Roadmaps That Actually Work
               </h3>
             </div>
           </div>
-          <p className="text-white/80 text-base md:text-lg leading-relaxed font-light">
-            Identify where AI creates the biggest impact in your agency. We conduct comprehensive readiness assessments and develop strategic roadmaps that align with your mission objectives—not just technology for technology's sake.
+          <p className="text-white/60 text-base md:text-lg leading-relaxed font-medium">
+            We help you identify where AI creates the biggest impact in your agency. Our team conducts comprehensive readiness assessments and develops strategic roadmaps that align with your mission objectives—not just technology for technology's sake.
           </p>
         </div>
       ),
@@ -74,13 +74,13 @@ const Services = () => {
                   <Icon className="h-6 w-6" primaryColor="#FFFFFF" secondaryColor="rgba(255, 255, 255, 0.4)" />
                 </div>
               )}
-              <h3 className="text-2xl md:text-3xl font-bold text-white tracking-tight leading-tight">
+              <h3 className="text-3xl md:text-4xl font-bold text-white tracking-tight leading-tight">
                 Intelligent Process Automation That Delivers
               </h3>
             </div>
           </div>
-          <p className="text-white/80 text-base md:text-lg leading-relaxed font-light">
-            Automate predefined government processes or create intelligent agentic workflows that adapt to dynamic tasks. Implement human-in-the-loop systems for critical decision points, ensuring accountability while maximizing efficiency.
+          <p className="text-white/60 text-base md:text-lg leading-relaxed font-medium">
+            We automate predefined government processes and create intelligent agentic workflows that adapt to dynamic tasks. Our solutions implement human-in-the-loop systems for critical decision points, ensuring accountability while maximizing efficiency.
           </p>
         </div>
       ),
@@ -119,13 +119,13 @@ const Services = () => {
                   <Icon className="h-6 w-6" primaryColor="#FFFFFF" secondaryColor="rgba(255, 255, 255, 0.4)" />
                 </div>
               )}
-              <h3 className="text-2xl md:text-3xl font-bold text-white tracking-tight leading-tight">
+              <h3 className="text-3xl md:text-4xl font-bold text-white tracking-tight leading-tight">
                 Data Insights When You Need Them
               </h3>
             </div>
           </div>
-          <p className="text-white/80 text-base md:text-lg leading-relaxed font-light">
-            Transform your agency's data into actionable intelligence with AI-powered analytics platforms that provide real-time insights for better decision-making and citizen services—no data science PhD required.
+          <p className="text-white/60 text-base md:text-lg leading-relaxed font-medium">
+            We transform your agency's data into actionable intelligence with AI-powered analytics platforms that provide real-time insights for better decision-making and citizen services—no data science PhD required.
           </p>
         </div>
       ),
@@ -164,13 +164,13 @@ const Services = () => {
                   <Icon className="h-6 w-6" primaryColor="#FFFFFF" secondaryColor="rgba(255, 255, 255, 0.4)" />
                 </div>
               )}
-              <h3 className="text-2xl md:text-3xl font-bold text-white tracking-tight leading-tight">
+              <h3 className="text-3xl md:text-4xl font-bold text-white tracking-tight leading-tight">
                 Build AI Expertise That Lasts
               </h3>
             </div>
           </div>
-          <p className="text-white/80 text-base md:text-lg leading-relaxed font-light">
-            Build lasting AI expertise within your organization through comprehensive training programs, hands-on workshops, and ongoing mentorship. Because the best AI implementations succeed when your people understand and trust the technology.
+          <p className="text-white/60 text-base md:text-lg leading-relaxed font-medium">
+            We build lasting AI expertise within your organization through comprehensive training programs, hands-on workshops, and ongoing mentorship. Because the best AI implementations succeed when your people understand and trust the technology.
           </p>
         </div>
       ),
