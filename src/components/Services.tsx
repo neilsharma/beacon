@@ -18,8 +18,8 @@ const Services = () => {
         <div>
           <div className="mb-6">
             <div className="mb-4 flex items-center gap-2">
-              <Target className="h-4 w-4 text-blue-400" />
-              <span className="text-blue-400 text-sm font-bold tracking-wide uppercase">
+              <Target className="h-4 w-4 text-yellow-400" />
+              <span className="text-yellow-400 text-sm font-bold tracking-wide uppercase">
                 AI Strategy & Assessment
               </span>
             </div>
@@ -49,9 +49,9 @@ const Services = () => {
             speed={3}
           />
           <img
-            src="/strategy-abstract.png"
+            src="/strategy-abstract-2.png"
             alt="AI Strategy & Assessment"
-            className="w-48 h-48 md:w-64 md:h-64 object-contain relative z-10"
+            className="w-56 h-56 md:w-80 md:h-80 object-contain relative z-10"
           />
         </div>
       ),
@@ -63,8 +63,8 @@ const Services = () => {
         <div>
           <div className="mb-6">
             <div className="mb-4 flex items-center gap-2">
-              <Zap className="h-4 w-4 text-blue-400" />
-              <span className="text-blue-400 text-sm font-bold tracking-wide uppercase">
+              <Zap className="h-4 w-4 text-yellow-400" />
+              <span className="text-yellow-400 text-sm font-bold tracking-wide uppercase">
                 Workflow Automation
               </span>
             </div>
@@ -94,9 +94,9 @@ const Services = () => {
             speed={3}
           />
           <img
-            src="/automation-abstract.png"
+            src="/automation-abstract-2.png"
             alt="Workflow Automation"
-            className="w-48 h-48 md:w-64 md:h-64 object-contain relative z-10"
+            className="w-56 h-56 md:w-80 md:h-80 object-contain relative z-10"
           />
         </div>
       ),
@@ -108,8 +108,8 @@ const Services = () => {
         <div>
           <div className="mb-6">
             <div className="mb-4 flex items-center gap-2">
-              <BarChart3 className="h-4 w-4 text-blue-400" />
-              <span className="text-blue-400 text-sm font-bold tracking-wide uppercase">
+              <BarChart3 className="h-4 w-4 text-yellow-400" />
+              <span className="text-yellow-400 text-sm font-bold tracking-wide uppercase">
                 Data Intelligence
               </span>
             </div>
@@ -139,9 +139,9 @@ const Services = () => {
             speed={3}
           />
           <img
-            src="/data-abstract.png"
+            src="/intelligence-abstract-2.png"
             alt="Data Intelligence"
-            className="w-48 h-48 md:w-64 md:h-64 object-contain relative z-10"
+            className="w-56 h-56 md:w-80 md:h-80 object-contain relative z-10"
           />
         </div>
       ),
@@ -153,8 +153,8 @@ const Services = () => {
         <div>
           <div className="mb-6">
             <div className="mb-4 flex items-center gap-2">
-              <Users className="h-4 w-4 text-blue-400" />
-              <span className="text-blue-400 text-sm font-bold tracking-wide uppercase">
+              <Users className="h-4 w-4 text-yellow-400" />
+              <span className="text-yellow-400 text-sm font-bold tracking-wide uppercase">
                 Team Capability Building
               </span>
             </div>
@@ -184,9 +184,9 @@ const Services = () => {
             speed={3}
           />
           <img
-            src="/hiring-abstract.png"
+            src="/hiring-abstract-2.png"
             alt="Team Capability Building"
-            className="w-48 h-48 md:w-64 md:h-64 object-contain relative z-10"
+            className="w-56 h-56 md:w-80 md:h-80 object-contain relative z-10"
           />
         </div>
       ),
@@ -201,13 +201,13 @@ const Services = () => {
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16 sm:mb-20">
           <motion.div
-            className="inline-flex items-center px-4 py-2 rounded-full bg-blue-400/10 border border-blue-400/20 mb-6"
+            className="inline-flex items-center px-4 py-2 rounded-full bg-yellow-400/10 border border-yellow-400/20 mb-6"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
             viewport={{ once: true }}
           >
-            <span className="text-blue-400 text-sm font-bold tracking-wide uppercase">
+            <span className="text-yellow-400 text-sm font-bold tracking-wide uppercase">
               Government AI Solutions
             </span>
           </motion.div>
