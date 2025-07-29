@@ -49,7 +49,7 @@ const Services = () => {
             speed={3}
           />
           <img
-            src="/strategy-abstract-2.png"
+            src="/strategy-abstract-new.svg"
             alt="AI Strategy & Assessment"
             className="w-56 h-56 md:w-80 md:h-80 object-contain relative z-10"
           />
@@ -94,7 +94,7 @@ const Services = () => {
             speed={3}
           />
           <img
-            src="/automation-abstract-2.png"
+            src="/automation-abstract-new.svg"
             alt="Workflow Automation"
             className="w-56 h-56 md:w-80 md:h-80 object-contain relative z-10"
           />
@@ -139,7 +139,7 @@ const Services = () => {
             speed={3}
           />
           <img
-            src="/intelligence-abstract-2.png"
+            src="/data-abstract-new.svg"
             alt="Data Intelligence"
             className="w-56 h-56 md:w-80 md:h-80 object-contain relative z-10"
           />
@@ -184,7 +184,7 @@ const Services = () => {
             speed={3}
           />
           <img
-            src="/hiring-abstract-2.png"
+            src="/hiring-abstract-new.svg"
             alt="Team Capability Building"
             className="w-56 h-56 md:w-80 md:h-80 object-contain relative z-10"
           />
