@@ -1,94 +1,9 @@
 import { Send } from 'lucide-react';
-import { useState } from 'react';
 import { SectionBorder } from './ui/section-border';
 import { SectionGlow } from './ui/section-glow';
 import { Particles } from './magicui/particles';
 
 const Contact = () => {
-  const [isSubmitted, setIsSubmitted] = useState(false);
-
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
-    
-    // Check if we're in development (localhost)
-    const isDevelopment = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1';
-    
-    if (isDevelopment) {
-      // In development, just show success message
-      console.log('Development mode: Form submission simulated');
-      setIsSubmitted(true);
-      return;
-    }
-    
-    const form = e.currentTarget;
-    const formData = new FormData(form);
-    
-    // Convert FormData to URLSearchParams properly
-    const params = new URLSearchParams();
-    formData.forEach((value, key) => {
-      params.append(key, value.toString());
-    });
-    
-    // Submit to Netlify (only works on deployed site)
-    fetch('/', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-      body: params.toString()
-    })
-    .then((response) => {
-      if (response.ok) {
-        setIsSubmitted(true);
-      } else {
-        console.error('Form submission failed:', response.status, response.statusText);
-      }
-    })
-    .catch((error) => {
-      console.error('Form submission error:', error);
-    });
-  };
-
-  if (isSubmitted) {
-    return (
-      <section id="contact" className="py-12 sm:py-20 bg-black relative overflow-hidden">
-        <SectionBorder />
-        <SectionGlow opacity="8%" position="top-[-300px]" />
-        <Particles
-          className="absolute inset-0"
-          quantity={60}
-          ease={80}
-          color="#ffffff"
-          refresh
-        />
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          <div className="text-center mb-12 sm:mb-16">
-            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-4">
-              Thank You!
-            </h2>
-            <p className="text-lg sm:text-xl text-gray-300 max-w-3xl mx-auto px-4 sm:px-0">
-              Your message has been sent successfully. We'll get back to you within 24 hours to discuss how AI can transform your agency.
-            </p>
-          </div>
-          <div className="flex justify-center">
-            <div className="bg-gradient-to-b from-modernization-gradient-start to-black backdrop-blur-sm border border-card-border p-6 sm:p-8 rounded-xl max-w-lg w-full shadow-lg text-center">
-              <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                <Send className="h-8 w-8 text-green-600" />
-              </div>
-              <h3 className="text-xl sm:text-2xl font-bold text-white mb-4">Message Sent!</h3>
-              <p className="text-sm sm:text-base text-gray-300 mb-6">
-                Our team will review your project details and reach out to schedule a consultation.
-              </p>
-              <button
-                onClick={() => setIsSubmitted(false)}
-                className="bg-yellow-500 border border-yellow-500 text-black px-6 py-3 rounded-lg font-semibold hover:bg-yellow-600 transition-colors duration-300"
-              >
-                Send Another Message
-              </button>
-            </div>
-          </div>
-        </div>
-      </section>
-    );
-  }
 
   return (
     <section id="contact" className="py-12 sm:py-20 bg-black relative overflow-hidden">
@@ -123,7 +38,7 @@ const Contact = () => {
           <div className="bg-gradient-to-b from-modernization-gradient-start to-black backdrop-blur-sm border border-card-border p-6 sm:p-8 rounded-xl max-w-lg w-full shadow-lg">
             <h3 className="text-xl sm:text-2xl font-bold text-white mb-4 sm:mb-6">Get Started Today</h3>
             
-            <form name="contact" data-netlify="true" onSubmit={handleSubmit} className="space-y-4 sm:space-y-6">
+            <form name="contact" method="POST" data-netlify="true" className="space-y-4 sm:space-y-6">
               <input type="hidden" name="form-name" value="contact" />
               <div>
                 <label htmlFor="name" className="block text-xs sm:text-sm font-medium text-gray-300 mb-2">
