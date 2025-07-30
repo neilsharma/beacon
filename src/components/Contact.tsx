@@ -1,13 +1,27 @@
 import { Send } from 'lucide-react';
-import { useForm, ValidationError } from '@formspree/react';
+import { useState } from 'react';
 import { SectionBorder } from './ui/section-border';
 import { SectionGlow } from './ui/section-glow';
 import { Particles } from './magicui/particles';
 
 const Contact = () => {
-  const [state, handleSubmit] = useForm("xjkrnjnr");
+  const [isSubmitted, setIsSubmitted] = useState(false);
 
-  if (state.succeeded) {
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    const form = e.currentTarget;
+    
+    // Submit to Netlify
+    fetch('/', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+      body: new URLSearchParams(new FormData(form) as any).toString()
+    })
+    .then(() => setIsSubmitted(true))
+    .catch((error) => console.error('Form submission error:', error));
+  };
+
+  if (isSubmitted) {
     return (
       <section id="contact" className="py-12 sm:py-20 bg-black relative overflow-hidden">
         <SectionBorder />
@@ -38,7 +52,7 @@ const Contact = () => {
                 Our team will review your project details and reach out to schedule a consultation.
               </p>
               <button
-                onClick={() => window.location.reload()}
+                onClick={() => setIsSubmitted(false)}
                 className="bg-yellow-500 border border-yellow-500 text-black px-6 py-3 rounded-lg font-semibold hover:bg-yellow-600 transition-colors duration-300"
               >
                 Send Another Message
@@ -76,7 +90,8 @@ const Contact = () => {
           <div className="bg-gradient-to-b from-modernization-gradient-start to-black backdrop-blur-sm border border-card-border p-6 sm:p-8 rounded-xl max-w-lg w-full shadow-lg">
             <h3 className="text-xl sm:text-2xl font-bold text-white mb-4 sm:mb-6">Get Started Today</h3>
             
-            <form onSubmit={handleSubmit} className="space-y-4 sm:space-y-6">
+            <form name="contact" method="POST" data-netlify="true" onSubmit={handleSubmit} className="space-y-4 sm:space-y-6">
+              <input type="hidden" name="form-name" value="contact" />
               <div>
                 <label htmlFor="name" className="block text-xs sm:text-sm font-medium text-gray-300 mb-2">
                   Full Name
@@ -88,12 +103,6 @@ const Contact = () => {
                   required
                   className="w-full px-3 sm:px-4 py-2 sm:py-3 bg-white/10 border border-white/20 text-white rounded-lg focus:bg-white/15 focus:border-yellow-500 focus:ring-2 focus:ring-yellow-500/20 transition-all placeholder-gray-400 text-sm sm:text-base"
                   placeholder="Your full name"
-                />
-                <ValidationError 
-                  prefix="Name" 
-                  field="name"
-                  errors={state.errors}
-                  className="text-red-500 text-sm mt-1"
                 />
               </div>
 
@@ -109,12 +118,6 @@ const Contact = () => {
                   className="w-full px-3 sm:px-4 py-2 sm:py-3 bg-white/10 border border-white/20 text-white rounded-lg focus:bg-white/15 focus:border-yellow-500 focus:ring-2 focus:ring-yellow-500/20 transition-all placeholder-gray-400 text-sm sm:text-base"
                   placeholder="your.email@agency.gov"
                 />
-                <ValidationError 
-                  prefix="Email" 
-                  field="email"
-                  errors={state.errors}
-                  className="text-red-500 text-sm mt-1"
-                />
               </div>
 
               <div>
@@ -128,12 +131,6 @@ const Contact = () => {
                   required
                   className="w-full px-3 sm:px-4 py-2 sm:py-3 bg-white/10 border border-white/20 text-white rounded-lg focus:bg-white/15 focus:border-yellow-500 focus:ring-2 focus:ring-yellow-500/20 transition-all placeholder-gray-400 text-sm sm:text-base"
                   placeholder="Your agency or company"
-                />
-                <ValidationError 
-                  prefix="Agency/Company" 
-                  field="agencyCompany"
-                  errors={state.errors}
-                  className="text-red-500 text-sm mt-1"
                 />
               </div>
 
@@ -149,21 +146,14 @@ const Contact = () => {
                   className="w-full px-3 sm:px-4 py-2 sm:py-3 bg-white/10 border border-white/20 text-white rounded-lg focus:bg-white/15 focus:border-yellow-500 focus:ring-2 focus:ring-yellow-500/20 transition-all placeholder-gray-400 text-sm sm:text-base"
                   placeholder="Tell us about your AI project needs..."
                 />
-                <ValidationError 
-                  prefix="Message" 
-                  field="message"
-                  errors={state.errors}
-                  className="text-red-500 text-sm mt-1"
-                />
               </div>
 
               <button
                 type="submit"
-                disabled={state.submitting}
-                className="w-full bg-yellow-500 border border-yellow-500 text-black px-4 sm:px-6 py-3 sm:py-4 rounded-lg font-semibold hover:bg-yellow-600 disabled:opacity-50 disabled:cursor-not-allowed transition-colors duration-300 flex items-center justify-center space-x-2 group text-sm sm:text-base"
+                className="w-full bg-yellow-500 border border-yellow-500 text-black px-4 sm:px-6 py-3 sm:py-4 rounded-lg font-semibold hover:bg-yellow-600 transition-colors duration-300 flex items-center justify-center space-x-2 group text-sm sm:text-base"
               >
-                <Send className="h-5 w-5 group-hover:translate-x-1 transition-transform" />
-                <span>{state.submitting ? 'Sending...' : 'Send Message'}</span>
+                <Send className="h-5 w-5 group-hover:translate-x-1 transition-transform flex-shrink-0" />
+                <span>Send Message</span>
               </button>
             </form>
           </div>

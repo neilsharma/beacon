@@ -206,7 +206,7 @@ const Services = () => {
       <SectionGlow opacity="8%" />
       
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16 sm:mb-20">
+        <div className="text-center mb-8 sm:mb-12">
           <div className="inline-flex items-center px-4 py-2 rounded-full bg-yellow-400/10 border border-yellow-400/20 mb-6">
             <span className="text-yellow-400 text-sm font-bold tracking-wide uppercase">
               Government AI Solutions
