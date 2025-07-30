@@ -28,7 +28,7 @@ export const Sparkles: React.FC<SparklesProps> = ({
       x: Math.random() * 100,
       y: Math.random() * 100,
       size: Math.random() * (maxSize - minSize) + minSize,
-      delay: Math.random() * 3,
+      delay: 0,
     }));
   }, [density, minSize, maxSize]);
 

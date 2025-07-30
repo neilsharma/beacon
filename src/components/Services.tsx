@@ -2,7 +2,7 @@ import { motion } from 'framer-motion';
 import { SectionBorder } from './ui/section-border';
 import { SectionGlow } from './ui/section-glow';
 import { Timeline } from './ui/timeline';
-import { Sparkles } from './ui/sparkles';
+import { Particles } from './magicui/particles';
 import RocketIcon from './icons/RocketIcon';
 import GearIcon from './icons/GearIcon';
 import DatabaseNewIcon from './icons/DatabaseNewIcon';
@@ -40,18 +40,28 @@ const Services = () => {
         </div>
       ),
       imageContent: (
-        <div className="flex items-center justify-center relative w-full h-64 md:h-80">
-          <Sparkles 
-            className="absolute inset-0 -inset-y-8" 
-            density={25} 
-            color="#3b82f6" 
-            size={3}
-            speed={3}
+        <div className="flex items-center justify-center relative w-full h-80 md:h-96">
+          <Particles 
+            className="absolute inset-0" 
+            quantity={25} 
+            color="#ffffff" 
+            size={1.5}
+            staticity={30}
           />
-          <img
-            src="/strategy-abstract-new.svg"
+          <motion.img
+            src="/strategy-abstract-2.svg"
             alt="AI Strategy & Assessment"
-            className="w-56 h-56 md:w-80 md:h-80 object-contain relative z-10"
+            className="w-80 h-80 md:w-96 md:h-96 object-contain relative z-10"
+            animate={{
+              rotate: [0, 5, -5, 0],
+              scale: [1, 1.05, 0.98, 1],
+            }}
+            transition={{
+              duration: 8,
+              repeat: Infinity,
+              ease: "easeInOut",
+              repeatDelay: 2
+            }}
           />
         </div>
       ),
@@ -86,17 +96,27 @@ const Services = () => {
       ),
       imageContent: (
         <div className="flex items-center justify-center relative w-full h-64 md:h-80">
-          <Sparkles 
-            className="absolute inset-0 -inset-y-8" 
-            density={25} 
-            color="#3b82f6" 
-            size={3}
-            speed={3}
+          <Particles 
+            className="absolute inset-0" 
+            quantity={25} 
+            color="#ffffff" 
+            size={1.5}
+            staticity={30}
           />
-          <img
+          <motion.img
             src="/automation-abstract-new.svg"
             alt="Workflow Automation"
             className="w-56 h-56 md:w-80 md:h-80 object-contain relative z-10"
+            animate={{
+              rotate: [0, -3, 7, 0],
+              scale: [1, 0.95, 1.08, 1],
+            }}
+            transition={{
+              duration: 10,
+              repeat: Infinity,
+              ease: "easeInOut",
+              repeatDelay: 1.5
+            }}
           />
         </div>
       ),
@@ -131,17 +151,27 @@ const Services = () => {
       ),
       imageContent: (
         <div className="flex items-center justify-center relative w-full h-64 md:h-80">
-          <Sparkles 
-            className="absolute inset-0 -inset-y-8" 
-            density={25} 
-            color="#3b82f6" 
-            size={3}
-            speed={3}
+          <Particles 
+            className="absolute inset-0" 
+            quantity={25} 
+            color="#ffffff" 
+            size={1.5}
+            staticity={30}
           />
-          <img
-            src="/data-abstract-new.svg"
+          <motion.img
+            src="/intelligence-abstract.svg"
             alt="Data Intelligence"
             className="w-56 h-56 md:w-80 md:h-80 object-contain relative z-10"
+            animate={{
+              rotate: [0, 4, -6, 0],
+              scale: [1, 1.03, 0.97, 1],
+            }}
+            transition={{
+              duration: 9,
+              repeat: Infinity,
+              ease: "easeInOut",
+              repeatDelay: 3
+            }}
           />
         </div>
       ),
@@ -176,17 +206,27 @@ const Services = () => {
       ),
       imageContent: (
         <div className="flex items-center justify-center relative w-full h-64 md:h-80">
-          <Sparkles 
-            className="absolute inset-0 -inset-y-8" 
-            density={25} 
-            color="#3b82f6" 
-            size={3}
-            speed={3}
+          <Particles 
+            className="absolute inset-0" 
+            quantity={25} 
+            color="#ffffff" 
+            size={1.5}
+            staticity={30}
           />
-          <img
-            src="/hiring-abstract-new.svg"
+          <motion.img
+            src="/team-building-abstract.svg"
             alt="Team Capability Building"
-            className="w-56 h-56 md:w-80 md:h-80 object-contain relative z-10"
+            className="w-[28rem] h-[28rem] md:w-[36rem] md:h-[36rem] object-contain relative z-10"
+            animate={{
+              rotate: [0, -4, 6, 0],
+              scale: [1, 1.06, 0.94, 1],
+            }}
+            transition={{
+              duration: 11,
+              repeat: Infinity,
+              ease: "easeInOut",
+              repeatDelay: 2.5
+            }}
           />
         </div>
       ),
@@ -200,39 +240,21 @@ const Services = () => {
       
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16 sm:mb-20">
-          <motion.div
-            className="inline-flex items-center px-4 py-2 rounded-full bg-yellow-400/10 border border-yellow-400/20 mb-6"
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5 }}
-            viewport={{ once: true }}
-          >
+          <div className="inline-flex items-center px-4 py-2 rounded-full bg-yellow-400/10 border border-yellow-400/20 mb-6">
             <span className="text-yellow-400 text-sm font-bold tracking-wide uppercase">
               Government AI Solutions
             </span>
-          </motion.div>
+          </div>
           
-          <motion.h2 
-            className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-8 tracking-tight"
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.1 }}
-            viewport={{ once: true }}
-          >
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-8 tracking-tight">
             <span className="bg-gradient-to-r from-white via-white to-gray-300 bg-clip-text text-transparent">
               Transforming Government
             </span>
             <span className="block text-white">Through Intelligent AI</span>
-          </motion.h2>
-          <motion.p 
-            className="text-lg sm:text-xl md:text-2xl text-white/90 max-w-4xl mx-auto font-light leading-relaxed px-4 sm:px-0"
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.3 }}
-            viewport={{ once: true }}
-          >
+          </h2>
+          <p className="text-lg sm:text-xl md:text-2xl text-white/90 max-w-4xl mx-auto font-light leading-relaxed px-4 sm:px-0">
             Empowering agencies to deliver exceptional citizen experiences while reducing costs, accelerating processes, and driving measurable outcomes.
-          </motion.p>
+          </p>
         </div>
 
         <Timeline data={timelineData} />
