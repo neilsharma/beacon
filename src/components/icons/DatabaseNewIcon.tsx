@@ -1,6 +1,12 @@
 import React from 'react';
 
-const DatabaseNewIcon = ({ className = "w-6 h-6" }: { className?: string }) => (
+interface DatabaseNewIconProps {
+  className?: string;
+  primaryColor?: string;
+  secondaryColor?: string;
+}
+
+const DatabaseNewIcon = ({ className = "w-6 h-6", primaryColor = "white", secondaryColor }: DatabaseNewIconProps) => (
   <svg 
     className={className}
     viewBox="0 0 24 24" 
@@ -12,18 +18,18 @@ const DatabaseNewIcon = ({ className = "w-6 h-6" }: { className?: string }) => (
       cy="7" 
       rx="7" 
       ry="3" 
-      stroke="white" 
+      stroke={primaryColor} 
       strokeWidth="2"
     />
     <path 
       d="M5 13C5 13 5 15.3431 5 17C5 18.6569 8.13401 20 12 20C15.866 20 19 18.6569 19 17C19 16.173 19 13 19 13" 
-      stroke="white" 
+      stroke={primaryColor} 
       strokeWidth="2" 
       strokeLinecap="square"
     />
     <path 
       d="M5 7C5 7 5 10.3431 5 12C5 13.6569 8.13401 15 12 15C15.866 15 19 13.6569 19 12C19 11.173 19 7 19 7" 
-      stroke="white" 
+      stroke={primaryColor} 
       strokeWidth="2"
     />
   </svg>

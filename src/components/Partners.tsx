@@ -92,12 +92,25 @@ const Partners = () => {
         {/* Stats below the logos */}
         <div className="text-center mt-12 sm:mt-16">
           <div className="mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="max-w-2xl mx-auto">
-              <p className="text-base sm:text-lg text-gray-700 leading-relaxed font-medium">
-                <span className="text-yellow-500 font-semibold">12</span> agencies engaged
-                <span className="mx-2">|</span>
-                <span className="text-yellow-500 font-semibold">10+</span> years with government
-              </p>
+            <div className="max-w-6xl mx-auto">
+              <div className="grid grid-cols-2 lg:grid-cols-4 gap-8 divide-x divide-gray-300">
+                <div className="text-center px-4">
+                  <div className="text-yellow-500 font-bold text-2xl sm:text-3xl">1M+</div>
+                  <div className="text-gray-700 text-base sm:text-lg font-semibold mt-2">Citizens impacted through digital service delivery</div>
+                </div>
+                <div className="text-center px-4">
+                  <div className="text-yellow-500 font-bold text-2xl sm:text-3xl">100s</div>
+                  <div className="text-gray-700 text-base sm:text-lg font-semibold mt-2">Manual labor hours saved through automation</div>
+                </div>
+                <div className="text-center px-4">
+                  <div className="text-yellow-500 font-bold text-2xl sm:text-3xl">10+</div>
+                  <div className="text-gray-700 text-base sm:text-lg font-semibold mt-2">Years with government experience</div>
+                </div>
+                <div className="text-center px-4">
+                  <div className="text-yellow-500 font-bold text-2xl sm:text-3xl">100%</div>
+                  <div className="text-gray-700 text-base sm:text-lg font-semibold mt-2">Repeat engagement with government clients</div>
+                </div>
+              </div>
             </div>
           </div>
         </div>

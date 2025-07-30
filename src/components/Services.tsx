@@ -14,7 +14,7 @@ const Services = () => {
     {
       title: "AI Strategy & Assessment",
       icon: RocketIcon,
-      textContent: ({ icon: Icon }: { icon?: React.ComponentType<any> }) => (
+      textContent: ({ icon: Icon }: { icon?: React.ComponentType<{ className?: string; primaryColor?: string; secondaryColor?: string }> }) => (
         <div>
           <div className="mb-6">
             <div className="mb-4 flex items-center gap-2">
@@ -62,7 +62,7 @@ const Services = () => {
     {
       title: "Workflow Automation",
       icon: GearIcon,
-      textContent: ({ icon: Icon }: { icon?: React.ComponentType<any> }) => (
+      textContent: ({ icon: Icon }: { icon?: React.ComponentType<{ className?: string; primaryColor?: string; secondaryColor?: string }> }) => (
         <div>
           <div className="mb-6">
             <div className="mb-4 flex items-center gap-2">
@@ -89,19 +89,12 @@ const Services = () => {
       ),
       imageContent: (
         <div className="flex items-center justify-center relative w-full h-64 md:h-80">
-          <Particles 
-            className="absolute inset-0" 
-            quantity={25} 
-            color="#ffffff" 
-            size={1.5}
-            staticity={30}
-          />
           <motion.img
-            src="/automation-abstract-new.svg"
+            src="/automation-2-abstract.png"
             alt="Workflow Automation"
             className="w-56 h-56 md:w-80 md:h-80 object-contain relative z-10"
             animate={{
-              rotate: [0, -3, 7, 0],
+              rotate: [0, -1, 2, 0],
               scale: [1, 0.95, 1.08, 1],
             }}
             transition={{
@@ -117,7 +110,7 @@ const Services = () => {
     {
       title: "Data Intelligence",
       icon: DatabaseNewIcon,
-      textContent: ({ icon: Icon }: { icon?: React.ComponentType<any> }) => (
+      textContent: ({ icon: Icon }: { icon?: React.ComponentType<{ className?: string; primaryColor?: string; secondaryColor?: string }> }) => (
         <div>
           <div className="mb-6">
             <div className="mb-4 flex items-center gap-2">
@@ -145,26 +138,16 @@ const Services = () => {
       imageContent: (
         <div className="flex items-center justify-center relative w-full h-64 md:h-80">
           <Particles 
-            className="absolute inset-0" 
+            className="absolute inset-0 bottom-1/2" 
             quantity={25} 
             color="#ffffff" 
             size={1.5}
             staticity={30}
           />
-          <motion.img
+          <img
             src="/intelligence-abstract.svg"
             alt="Data Intelligence"
-            className="w-56 h-56 md:w-80 md:h-80 object-contain relative z-10"
-            animate={{
-              rotate: [0, 4, -6, 0],
-              scale: [1, 1.03, 0.97, 1],
-            }}
-            transition={{
-              duration: 9,
-              repeat: Infinity,
-              ease: "easeInOut",
-              repeatDelay: 3
-            }}
+            className="w-80 h-80 md:w-[28rem] md:h-[28rem] object-contain relative z-10"
           />
         </div>
       ),
@@ -172,7 +155,7 @@ const Services = () => {
     {
       title: "Team Capability Building",
       icon: HireIcon,
-      textContent: ({ icon: Icon }: { icon?: React.ComponentType<any> }) => (
+      textContent: ({ icon: Icon }: { icon?: React.ComponentType<{ className?: string; primaryColor?: string; secondaryColor?: string }> }) => (
         <div>
           <div className="mb-6">
             <div className="mb-4 flex items-center gap-2">
@@ -199,26 +182,17 @@ const Services = () => {
       ),
       imageContent: (
         <div className="flex items-center justify-center relative w-full h-64 md:h-80">
-          <Particles 
-            className="absolute inset-0" 
-            quantity={25} 
-            color="#ffffff" 
-            size={1.5}
-            staticity={30}
-          />
           <motion.img
-            src="/team-building-abstract.svg"
+            src="/team-building-abstract.png"
             alt="Team Capability Building"
             className="w-[28rem] h-[28rem] md:w-[36rem] md:h-[36rem] object-contain relative z-10"
             animate={{
-              rotate: [0, -4, 6, 0],
-              scale: [1, 1.06, 0.94, 1],
+              rotate: [0, 360],
             }}
             transition={{
-              duration: 11,
+              duration: 120.0,
               repeat: Infinity,
-              ease: "easeInOut",
-              repeatDelay: 2.5
+              ease: "linear"
             }}
           />
         </div>

@@ -51,7 +51,7 @@ const Security = () => {
             background: useMotionTemplate`
             radial-gradient(
               400px circle at ${mouseX}px ${mouseY}px,
-              rgba(59, 130, 246, 0.15),
+              rgba(234, 179, 8, 0.15),
               transparent 80%
             )
           `,
@@ -168,7 +168,7 @@ export function EvervaultPattern({ mouseX, mouseY, randomString }: any) {
 
       {/* Mouse interaction gradient background */}
       <motion.div
-        className="absolute inset-0 bg-gradient-to-r from-blue-500/20 to-blue-700/20 opacity-0 group-hover:opacity-100 backdrop-blur-xl transition duration-500"
+        className="absolute inset-0 bg-gradient-to-r from-yellow-500/20 to-yellow-700/20 opacity-0 group-hover:opacity-100 backdrop-blur-xl transition duration-500"
         style={style}
       />
       

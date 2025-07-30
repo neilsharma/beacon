@@ -126,10 +126,10 @@ export const BackgroundBeams = React.memo(
                 id={`linearGradient-${index}`}
                 key={`gradient-${index}`}
                 initial={{
-                  x1: "0%",
-                  x2: "0%",
-                  y1: "0%",
-                  y2: "0%",
+                  x1: `${Math.random() * 100}%`,
+                  x2: `${Math.random() * 95}%`,
+                  y1: `${Math.random() * 100}%`,
+                  y2: `${Math.random() * 100}%`,
                 }}
                 animate={{
                   x1: ["0%", "100%"],

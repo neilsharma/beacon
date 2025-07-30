@@ -8,9 +8,9 @@ import React, { useEffect, useRef, useState } from "react";
 
 interface TimelineEntry {
   title: string;
-  textContent: React.ReactNode | ((props: { icon?: React.ComponentType<any> }) => React.ReactNode);
+  textContent: React.ReactNode | ((props: { icon?: React.ComponentType<{ className?: string; primaryColor?: string; secondaryColor?: string }> }) => React.ReactNode);
   imageContent: React.ReactNode;
-  icon?: React.ComponentType<any>;
+  icon?: React.ComponentType<{ className?: string; primaryColor?: string; secondaryColor?: string }>;
 }
 
 export const Timeline = ({ data }: { data: TimelineEntry[] }) => {
@@ -54,8 +54,8 @@ export const Timeline = ({ data }: { data: TimelineEntry[] }) => {
             </div>
 
             {/* Timeline center */}
-            <div className="col-span-1 flex justify-center relative">
-              <div className="inline-flex items-center justify-center w-20 h-20 rounded-full shadow-lg z-20 border-4 border-black" style={{ backgroundColor: 'rgba(30,30,30,1)' }}>
+            <div className="col-span-1 flex justify-center relative z-30">
+              <div className="inline-flex items-center justify-center w-20 h-20 rounded-full shadow-lg relative z-30 border-4 border-black" style={{ backgroundColor: 'rgba(30,30,30,1)' }}>
                 {item.icon && (
                   <item.icon 
                     className="h-8 w-8"
@@ -80,7 +80,7 @@ export const Timeline = ({ data }: { data: TimelineEntry[] }) => {
           style={{
             height: height + "px",
           }}
-          className="absolute left-1/2 transform -translate-x-1/2 top-0 overflow-hidden w-[2px] bg-[linear-gradient(to_bottom,var(--tw-gradient-stops))] from-transparent from-[0%] via-yellow-400/30 to-transparent to-[99%] [mask-image:linear-gradient(to_bottom,transparent_0%,black_10%,black_90%,transparent_100%)]"
+          className="absolute left-1/2 transform -translate-x-1/2 top-0 overflow-hidden w-[2px] bg-[linear-gradient(to_bottom,var(--tw-gradient-stops))] from-transparent from-[0%] via-yellow-400/30 to-transparent to-[99%] [mask-image:linear-gradient(to_bottom,transparent_0%,black_10%,black_90%,transparent_100%)] z-10"
         >
           <motion.div
             style={{
