@@ -41,13 +41,6 @@ const Services = () => {
       ),
       imageContent: (
         <div className="flex items-center justify-center relative w-full h-80 md:h-96">
-          <Particles 
-            className="absolute inset-0" 
-            quantity={25} 
-            color="#ffffff" 
-            size={1.5}
-            staticity={30}
-          />
           <motion.img
             src="/strategy-abstract-2.svg"
             alt="AI Strategy & Assessment"
