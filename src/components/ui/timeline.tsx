@@ -18,6 +18,10 @@ export const Timeline = ({ data }: { data: TimelineEntry[] }) => {
   const containerRef = useRef<HTMLDivElement>(null);
   const [height, setHeight] = useState(0);
 
+  // Create refs for each icon
+  const iconRefs = useRef<(HTMLDivElement | null)[]>([]);
+  iconRefs.current = data.map((_, i) => iconRefs.current[i] ?? null);
+
   useEffect(() => {
     if (ref.current) {
       const rect = ref.current.getBoundingClientRect();
@@ -27,11 +31,24 @@ export const Timeline = ({ data }: { data: TimelineEntry[] }) => {
 
   const { scrollYProgress } = useScroll({
     target: containerRef,
-    offset: ["start 60%", "end 40%"],
+    offset: ["start center", "end center"],
   });
 
   const heightTransform = useTransform(scrollYProgress, [0, 1], [0, height]);
   const opacityTransform = useTransform(scrollYProgress, [0, 0.05], [0, 1]);
+
+  // Create scroll progress for each icon
+  const iconScrollProgresses = data.map((_, index) => {
+    return useScroll({
+      target: iconRefs.current[index] ? { current: iconRefs.current[index] } : undefined,
+      offset: ["start center", "end center"]
+    }).scrollYProgress;
+  });
+
+  // Create color transforms for each icon
+  const iconBorderColors = iconScrollProgresses.map(progress => 
+    useTransform(progress, [0, 1], ["#000000", "#facc15"])
+  );
 
   return (
     <div className="w-full" ref={containerRef}>
@@ -40,6 +57,7 @@ export const Timeline = ({ data }: { data: TimelineEntry[] }) => {
         {data.map((item, index) => (
           <motion.div
             key={index}
+            data-timeline-item={index}
             className="grid grid-cols-5 gap-8 items-center pt-12 md:pt-24 pb-6 md:pb-12"
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -55,7 +73,14 @@ export const Timeline = ({ data }: { data: TimelineEntry[] }) => {
 
             {/* Timeline center */}
             <div className="col-span-1 flex justify-center relative z-30">
-              <div className="inline-flex items-center justify-center w-20 h-20 rounded-full shadow-lg relative z-30 border-4 border-black" style={{ backgroundColor: 'rgba(30,30,30,1)' }}>
+              <motion.div 
+                ref={(el) => { iconRefs.current[index] = el; }}
+                className="inline-flex items-center justify-center w-20 h-20 rounded-full shadow-lg relative z-30 border-2" 
+                style={{ 
+                  backgroundColor: 'rgba(30,30,30,1)',
+                  borderColor: iconBorderColors[index]
+                }}
+              >
                 {item.icon && (
                   <item.icon 
                     className="h-8 w-8"
@@ -63,7 +88,7 @@ export const Timeline = ({ data }: { data: TimelineEntry[] }) => {
                     secondaryColor="rgba(255, 255, 255, 0.4)"
                   />
                 )}
-              </div>
+              </motion.div>
             </div>
 
             {/* Right side - image for odd indices (0,2,4...), text for even indices (1,3,5...) */}

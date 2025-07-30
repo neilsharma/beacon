@@ -1,10 +1,12 @@
 "use client";
-import React from "react";
+import React, { useMemo, useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import { cn } from "@/lib/utils";
 
 export const BackgroundBeams = React.memo(
   ({ className }: { className?: string }) => {
+    const [isReady, setIsReady] = useState(false);
+    
     const paths = [
       "M-380 -189C-380 -189 -312 216 152 343C616 470 684 875 684 875",
       "M-373 -197C-373 -197 -305 208 159 335C623 462 691 867 691 867",
@@ -77,6 +79,32 @@ export const BackgroundBeams = React.memo(
       "M96 -733C96 -733 164 -328 628 -201C1092 -74 1160 331 1160 331",
       "M103 -741C103 -741 171 -336 635 -209C1099 -82 1167 323 1167 323",
     ];
+
+    // Pre-compute all animation data to avoid recalculation on render
+    const animationData = useMemo(() => {
+      return paths
+        .filter((_, index) => index % 2 === 0) // Changed from % 3 to % 2 for performance
+        .map((path, index) => ({
+          id: `linearGradient-${index}`,
+          initial: {
+            x1: `${Math.random() * 100}%`,
+            x2: `${Math.random() * 95}%`,
+            y1: `${Math.random() * 100}%`,
+            y2: `${Math.random() * 100}%`,
+          },
+          duration: Math.random() * 6 + 10,
+          delay: index * 0.5 + Math.random() * 2, // Staggered start times
+          finalY2: `${93 + Math.random() * 8}%`,
+        }));
+    }, []);
+
+    // Start animations immediately after component mounts
+    useEffect(() => {
+      requestAnimationFrame(() => {
+        setIsReady(true);
+      });
+    }, []);
+
     return (
       <div
         className={cn(
@@ -110,38 +138,34 @@ export const BackgroundBeams = React.memo(
           ))}
           
           {/* Animated beam paths */}
-          {paths.filter((_, index) => index % 3 === 0).map((path, index) => (
+          {animationData.map((data, index) => (
             <motion.path
               key={`beam-` + index}
-              d={path}
-              stroke={`url(#linearGradient-${index})`}
+              d={paths.filter((_, i) => i % 2 === 0)[index]}
+              stroke={`url(#${data.id})`}
               strokeOpacity="0.6"
               strokeWidth="1.2"
             ></motion.path>
           ))}
           
           <defs>
-            {paths.filter((_, index) => index % 3 === 0).map((path, index) => (
+            {animationData.map((data) => (
               <motion.linearGradient
-                id={`linearGradient-${index}`}
-                key={`gradient-${index}`}
-                initial={{
-                  x1: `${Math.random() * 100}%`,
-                  x2: `${Math.random() * 95}%`,
-                  y1: `${Math.random() * 100}%`,
-                  y2: `${Math.random() * 100}%`,
-                }}
-                animate={{
+                id={data.id}
+                key={data.id}
+                initial={data.initial}
+                animate={isReady ? {
                   x1: ["0%", "100%"],
                   x2: ["0%", "95%"],
                   y1: ["0%", "100%"],
-                  y2: ["0%", `${93 + Math.random() * 8}%`],
-                }}
+                  y2: ["0%", data.finalY2],
+                } : data.initial}
                 transition={{
-                  duration: Math.random() * 10 + 15,
+                  duration: data.duration,
                   ease: "easeInOut",
                   repeat: Infinity,
-                  delay: 0,
+                  repeatDelay: Math.random() * 3 + 1,
+                  delay: data.delay,
                 }}
               >
                 <stop stopColor="#eab308" stopOpacity="0"></stop>
