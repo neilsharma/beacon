@@ -9,16 +9,42 @@ const Contact = () => {
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    const form = e.currentTarget;
     
-    // Submit to Netlify
+    // Check if we're in development (localhost)
+    const isDevelopment = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1';
+    
+    if (isDevelopment) {
+      // In development, just show success message
+      console.log('Development mode: Form submission simulated');
+      setIsSubmitted(true);
+      return;
+    }
+    
+    const form = e.currentTarget;
+    const formData = new FormData(form);
+    
+    // Convert FormData to URLSearchParams properly
+    const params = new URLSearchParams();
+    formData.forEach((value, key) => {
+      params.append(key, value.toString());
+    });
+    
+    // Submit to Netlify (only works on deployed site)
     fetch('/', {
       method: 'POST',
       headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-      body: new URLSearchParams(new FormData(form) as any).toString()
+      body: params.toString()
     })
-    .then(() => setIsSubmitted(true))
-    .catch((error) => console.error('Form submission error:', error));
+    .then((response) => {
+      if (response.ok) {
+        setIsSubmitted(true);
+      } else {
+        console.error('Form submission failed:', response.status, response.statusText);
+      }
+    })
+    .catch((error) => {
+      console.error('Form submission error:', error);
+    });
   };
 
   if (isSubmitted) {
@@ -66,6 +92,13 @@ const Contact = () => {
 
   return (
     <section id="contact" className="py-12 sm:py-20 bg-black relative overflow-hidden">
+      {/* Hidden form for Netlify form detection */}
+      <form name="contact" netlify netlify-honeypot="bot-field" hidden>
+        <input type="text" name="name" />
+        <input type="email" name="email" />
+        <input type="text" name="agencyCompany" />
+        <textarea name="message"></textarea>  
+      </form>
       <SectionBorder />
       <SectionGlow opacity="8%" position="top-[-300px]" />
       <Particles
@@ -90,7 +123,7 @@ const Contact = () => {
           <div className="bg-gradient-to-b from-modernization-gradient-start to-black backdrop-blur-sm border border-card-border p-6 sm:p-8 rounded-xl max-w-lg w-full shadow-lg">
             <h3 className="text-xl sm:text-2xl font-bold text-white mb-4 sm:mb-6">Get Started Today</h3>
             
-            <form name="contact" method="POST" data-netlify="true" onSubmit={handleSubmit} className="space-y-4 sm:space-y-6">
+            <form name="contact" data-netlify="true" onSubmit={handleSubmit} className="space-y-4 sm:space-y-6">
               <input type="hidden" name="form-name" value="contact" />
               <div>
                 <label htmlFor="name" className="block text-xs sm:text-sm font-medium text-gray-300 mb-2">
