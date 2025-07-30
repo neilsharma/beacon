@@ -100,7 +100,7 @@ const Partners = () => {
                 </div>
                 <div className="text-center px-4">
                   <div className="text-yellow-500 font-bold text-2xl sm:text-3xl">100s</div>
-                  <div className="text-gray-700 text-base sm:text-lg font-semibold mt-2">Manual labor hours saved through automation</div>
+                  <div className="text-gray-700 text-base sm:text-lg font-semibold mt-2">Years of manual work saved through automation</div>
                 </div>
                 <div className="text-center px-4">
                   <div className="text-yellow-500 font-bold text-2xl sm:text-3xl">10+</div>
